@@ -22,4 +22,23 @@ const createNewspecialty = (req, res) => {
     });
 };
 
-module.exports = { createNewspecialty };
+const getAllSpeciality=(req,res)=>{
+specialtyModel.find({})
+.then((result) => {
+    res.status(201).json({
+      success: true,
+      message: `All Speciality`,
+      specialt: result,
+    });
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      err: err.message,
+    });
+  });
+}
+
+
+module.exports = { createNewspecialty,getAllSpeciality };

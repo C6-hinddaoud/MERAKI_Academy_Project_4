@@ -6,6 +6,7 @@ const specialtyRouter = require("./routes/specialty");
 const doctorRouter = require("./routes/doctor");
 const loginRouter = require("./routes/login");
 const reservationRouter = require("./routes/reservation");
+const prescriptionRouter = require("./routes/prescription");
 
 require("dotenv").config();
 require("./models/db");
@@ -21,6 +22,7 @@ app.use("/specialties",specialtyRouter)
 app.use("/doctors",doctorRouter)
 app.use("/login",loginRouter)
 app.use("/reservation",reservationRouter)
+app.use("/prescription",prescriptionRouter)
 // Import Routers
 
 

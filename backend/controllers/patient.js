@@ -11,6 +11,7 @@ const register = (req, res) => {
     role,
     doctor,
     phone,
+   // prescription
   } = req.body;
 
   
@@ -24,6 +25,7 @@ const register = (req, res) => {
     role,
     doctor,
     phone,
+    prescription,
     role:"63315dcf248788e06c717742"
   });
   newPatient

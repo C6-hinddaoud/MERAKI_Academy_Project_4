@@ -42,4 +42,28 @@ const createNewDoctor = (req, res) => {
     });
 };
 
-module.exports = { createNewDoctor };
+
+const getallDoctobySpecialty=(req,res)=>{
+    console.log("hindgg")
+let specialty=req.params.spicilaty
+doctorModel.find({specialty:specialty})
+.then((result) => {
+    res.status(201).json({
+      success: true,
+      message: `Doctor created`,
+      specialt: result,
+    });
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      err: err.message,
+    });
+  });
+
+}
+
+
+
+module.exports = { createNewDoctor ,getallDoctobySpecialty};
