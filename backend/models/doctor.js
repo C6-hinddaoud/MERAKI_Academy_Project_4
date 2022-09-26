@@ -13,12 +13,12 @@ const doctorSchema = new mongoose.Schema({
   
 });
 
-// userSchema.pre("save" , async function(){
+doctorSchema.pre("save" , async function(){
 
  
-// this.password=await bcrypt.hash(this.password,5)
-// this.email=await this.email.toLowerCase();
-// })
+this.password=await bcrypt.hash(this.password,5)
+this.email=await this.email.toLowerCase();
+})
 
 
 module.exports=mongoose.model("doctor",doctorSchema)

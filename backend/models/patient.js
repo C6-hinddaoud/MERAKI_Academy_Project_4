@@ -13,11 +13,11 @@ const patientSchema = new mongoose.Schema({
   phone:{ type: String }
 });
 
-// userSchema.pre("save" , async function(){
+patientSchema.pre("save" , async function(){
 
  
-// this.password=await bcrypt.hash(this.password,5)
-// this.email=await this.email.toLowerCase();
-// })
+this.password=await bcrypt.hash(this.password,5)
+this.email=await this.email.toLowerCase();
+})
 
 module.exports=mongoose.model("patient",patientSchema)

@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
-const bcrypt=require("bcrypt")
+//const bcrypt=require("bcrypt")
 const reservationSchema = new mongoose.Schema({
   date: { type: Date},
   time:{ type: String },
 
-  doctor:{type: mongoose.Schema.Types.ObjectId,ref:"doctor" },
-  patient:{type: mongoose.Schema.Types.ObjectId,ref:"patient" }
+  doctorRes:{type: mongoose.Schema.Types.ObjectId,ref:"doctor" },
+  patientRes:{type: mongoose.Schema.Types.ObjectId,ref:"patient" }
   
 });
 
@@ -16,4 +16,4 @@ const reservationSchema = new mongoose.Schema({
 // this.email=await this.email.toLowerCase();
 // })
 
-module.exports=mongoose.model("Reservation",reservationSchema)
+module.exports=mongoose.model("reservation",reservationSchema)
