@@ -97,7 +97,9 @@ console.log("lkj")
   const doctor=req.token.userId;
   const name=req.token.name
   const firstName=req.query.firstName
-  patientModel.find({doctor:doctor , firstName:firstName})
+  const regex=new RegExp(firstName,"gi")
+  console.log(regex)
+  patientModel.find({doctor:doctor , firstName:{$regex:regex}})
   .then((result) => {
     console.log("bf", result)
     if(!result){
