@@ -8,6 +8,6 @@ const authorization = require("../middleware/authorization");
 const  reservationRouter=express.Router();
 
 
-reservationRouter.post("/",authentication, createNewReservation);//authorization("Create_Reservation"),
+reservationRouter.post("/",authentication, authorization("Create_Reservation"),createNewReservation);//authorization("Create_Reservation"),
 
 module.exports = reservationRouter

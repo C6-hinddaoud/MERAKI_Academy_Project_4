@@ -35,11 +35,7 @@ const createNewReservation = (req, res) => {
             err: err.message,})
 
         console.log(result._id)
-      res.status(201).json({
-        success: true,
-        message: `reservation created`,
-        Reservation: result,
-      });
+      
     })
 })
     .catch((err) => {

@@ -11,7 +11,7 @@ const register = (req, res) => {
     role,
     doctor,
     phone,
-   // prescription
+    prescription
   } = req.body;
 
   
@@ -52,8 +52,65 @@ const register = (req, res) => {
     });
 };
 
-const login = () => {};
+const deletePatientbyid=(req,res) => {
+const _id=req.token.userId
+const name=req.token.firstName
+patientModel
+.findByIdAndDelete(_id)
+.then((result) => {
+  if (!result) {
+    return res.status(404).json({
+      success: false,
+      message: `The patient: ${_id} is not found`,
+    });
+  }
+  res.status(200).json({
+    success: true,
+    message: `Patient ${name} deleted`,
+  });
+})
+.catch((err) => {
+  res.status(500).json({
+    success: false,
+    message: `Server Error`,
+    err: err.message,
+  });
+});
+};
+
+
+const updatePatientbyId=(req,res)=>{
+
+
+  const _id = req.token.userId;
+const name=req.token.firstName
+  patientModel
+    .findByIdAndUpdate(_id, req.body, { new: true })
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Patient: ${_id} is not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: `the ${name} updated`,
+        Patient: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    })
+
+
+}
+
 
 module.exports = {
-  register,
+  register,deletePatientbyid ,updatePatientbyId
 };

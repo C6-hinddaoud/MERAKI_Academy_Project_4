@@ -1,5 +1,5 @@
 const doctorModel = require("../models/doctor");
-
+const patientModel=require("../models/patient")
 
 const createNewDoctor = (req, res) => {
   const { 
@@ -64,6 +64,35 @@ doctorModel.find({specialty:specialty})
 
 }
 
+const getAllPatientInTheSameDoctor=(req,res)=>{
+const doctor=req.token.userId;
+const name=req.token.name
+patientModel.find({doctor})
+.then((result) => {
+  if(!result){
+    res.status(500).json({
+      success: false,
+      message: `There Are no Patient in Dr:${name}`,
+      specialt: result,
+    });
+  }else{
+  res.status(201).json({
+    success: true,
+    message: `All Patient in Dr:${name}`,
+    specialt: result,
+  });
+}
+})
+.catch((err) => {
+  res.status(500).json({
+    success: false,
+    message: `Server Error`,
+    err: err.message,
+  });
+});
+
+}
 
 
-module.exports = { createNewDoctor ,getallDoctobySpecialty};
+
+module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor};
