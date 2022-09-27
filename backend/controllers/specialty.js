@@ -23,7 +23,11 @@ const createNewspecialty = (req, res) => {
 };
 
 const getAllSpeciality=(req,res)=>{
+  const { page = 1, limit = 10 } = req.query;
 specialtyModel.find({})
+.limit(limit * 1)
+.skip((page - 1) * limit)
+.exec()
 .then((result) => {
     res.status(201).json({
       success: true,
