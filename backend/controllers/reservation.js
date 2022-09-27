@@ -18,7 +18,7 @@ const createNewReservation = (req, res) => {
     .then((result) => {
 
         patientModel.updateOne({_id:userId},{doctor:doctorRes},{ new: true })
-        .then((result)=>{
+        .then(()=>{
             //const resDate = new Date(result.date);
             res.status(201).json({
                 success: true,
@@ -47,4 +47,70 @@ const createNewReservation = (req, res) => {
     });
 };
 
-module.exports = { createNewReservation };
+
+
+
+
+const deleteReservationById = (req, res) => {
+  const patientRes = req.token.userId;
+  reservationModel
+    .findOneAndDelete({patientRes:patientRes})
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The reservation: ${patientRes} is not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `reservation deleted`,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+};
+
+
+
+
+const updateReservationbyPatientId=(req,res)=>{
+
+  const patientRes = req.token.userId;
+  const name = req.token.firstName;
+  reservationModel
+    .findOneAndUpdate({patientRes:patientRes}, req.body, { new: true })
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Article: ${name} is not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: `Reservation for  ${name} updated`,
+        reservation: result,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err.message,
+      });
+    });
+
+}
+
+
+
+
+
+
+module.exports = { createNewReservation,deleteReservationById ,updateReservationbyPatientId};

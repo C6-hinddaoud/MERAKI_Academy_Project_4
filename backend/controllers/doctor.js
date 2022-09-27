@@ -92,7 +92,40 @@ patientModel.find({doctor})
 });
 
 }
+const gitpatientpyName=(req,res)=>{
+console.log("lkj")
+  const doctor=req.token.userId;
+  const name=req.token.name
+  const firstName=req.query.firstName
+  patientModel.find({doctor:doctor , firstName:firstName})
+  .then((result) => {
+    console.log("bf", result)
+    if(!result){
+      res.status(500).json({
+        success: false,
+        message: `There Are no Patient in Dr:${name}`,
+        patient: result,
+      });
+    }else{
+    res.status(201).json({
+      success: true,
+      message: `This is info about Patient :${firstName}`,
+      patient: result,
+    });
+  }
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      err: err.message,
+    });
+  });
+  
 
 
 
-module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor};
+}
+
+
+module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor,gitpatientpyName};
