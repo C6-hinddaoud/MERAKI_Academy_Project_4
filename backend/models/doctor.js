@@ -3,7 +3,7 @@ const bcrypt=require("bcrypt")
 const doctorSchema = new mongoose.Schema({
   name: { type: String, required: true },
  salary:{type: Number},
-
+image:{ type: String},
   email: { type: String, required: true , unique: true},
   password: { type: String, required: true },
   Qualification:{type: String},

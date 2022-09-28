@@ -5,7 +5,7 @@ const createNewDoctor = (req, res) => {
   const { 
     name,
     salary,
-   
+   image,
      email,
      password,
      Qualification,
@@ -18,6 +18,7 @@ const createNewDoctor = (req, res) => {
   const newDoctor = new doctorModel({ 
     name,
     salary,
+    image,
      email,
      password,
      Qualification,
