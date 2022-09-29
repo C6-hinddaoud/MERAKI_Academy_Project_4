@@ -44,19 +44,20 @@ axios.get(`http://localhost:5000/doctors/spicilaty/${specId}`)
     }
 
 
-const addNewReservation=()=>{
+const addNewReservation=async()=>{
 
-
-axios.post(`http://localhost:5000/reservation`,{
+try{
+ const result= await axios.post(`http://localhost:5000/reservation`,{
 date,time,doctorRes
 },
 {
 headers:{
     Authorization:`bearer ${token}`
-}
+},
 
 })
-.then((result) => {
+//.then((result) => {
+  console.log("mkjiooooo")
     console.log(result);
     //GettALLspic()
   // setSpecialt(result.data.specialt);
@@ -64,11 +65,13 @@ headers:{
    // setallDoctorRes(result.data.specialt)
     
   setMesage(result.data.message)
-  })
-  .catch((err) => {
+
+ // })
+}
+  catch(err){
     setMesage(err.response.data.message)
     throw err;
-  });
+  };
 
 
 }
