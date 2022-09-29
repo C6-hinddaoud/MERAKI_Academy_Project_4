@@ -1,12 +1,21 @@
 import React from "react";
 import axios from "axios";
-
+import { Navigate, useNavigate } from "react-router-dom";
 import { useState,useContext,useEffect } from "react";
 import "./style.css"
+import { authorContext } from "../../App";
 
 
 const Category=()=>{
 
+    const author=useContext(authorContext)
+const token=author.token
+const setToken=author.setToken
+const specId=author.specId
+const setSpecId=author.setSpecId
+
+
+const navgate= new useNavigate()
     const [specialt, setSpecialt] = useState([]);
     const [message, setMesage] = useState("");
     const GettAllSpic= (req, res) => {
@@ -22,6 +31,13 @@ const Category=()=>{
             throw err;
           });
       };
+
+
+// const goReservation=(req,res)=>{
+
+//     navgate("/reservation")
+//     setSpecId(elem._id)
+// }
 
 useEffect(()=>{
 
@@ -45,7 +61,11 @@ return(
                 >
                   {elem.specialty}
                   <br></br>
-                  <button onClick={reservation} className="registerbtn ">reservation</button>
+                  <button onClick={()=>{
+                    navgate("/reservation")
+                    setSpecId(elem._id)
+                   // console.log("mkm",specId)
+                  }}  className="registerbtn ">reservation</button>
                   </div>
               );
             })}
