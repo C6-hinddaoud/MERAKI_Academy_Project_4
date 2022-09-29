@@ -48,7 +48,7 @@ GettAllSpic()
 
 return(
     <div>
-<h1>Choose the medical specialty you want</h1>
+<h1 className="reservationH1">Choose the medical specialty you want</h1>
 
 <div className=" DivCatecontainer">
 
