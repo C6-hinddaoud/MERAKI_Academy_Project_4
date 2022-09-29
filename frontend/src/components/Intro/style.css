@@ -9,7 +9,7 @@ display: flex;
     height: 500px;
     justify-items: center;
     align-items: center;
-    gap: 320px;
+    
     margin: 20px;
     
     
@@ -18,8 +18,8 @@ display: flex;
 .divIntro {
 border: #3fbbc0 1px solid;
 width: 200px;
-height: 100px;
-gap: 50px;
+height: 170px;
+/* gap: 50px; */
 background-color: white;
 border-radius: 5px;
 
@@ -31,4 +31,9 @@ div.divIntro {
     background-color: #ffffff;
     border: 1px solid black;
     opacity: 0.6;
+  }
+  .btnIsDoc{
+
+margin-top: 20px;
+
   }

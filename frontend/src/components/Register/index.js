@@ -95,7 +95,7 @@ const Register = () => {
         ></input>
 
         <label for="email">
-          <b>Sallary</b>
+          <b>Salary</b>
         </label>
         <input
           onChange={(e) => {
