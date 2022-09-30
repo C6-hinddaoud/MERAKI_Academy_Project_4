@@ -13,9 +13,9 @@ const NewReservation=()=>{
     const [limittime,setlimittime]=useState([9,10,11,12,1,2,3])
     const [doctorRes,setDoctorRes]=useState("")
     const [patientRes,setPatientRes]=useState("")
-
-
-
+const[nameBool,setNameBool]=useState(false)
+const [resInfo,setResInfo]=useState({})
+let [doc,setDOC]=useState([])
 const [alldoctors,setallDoctorRes]=useState([])
     const author=useContext(authorContext)
     const token=author.token
@@ -30,9 +30,10 @@ axios.get(`http://localhost:5000/doctors/spicilaty/${specId}`)
     console.log(result);
     //GettALLspic()
   // setSpecialt(result.data.specialt);
-  console.log(result.data.specialt)
+  console.log("lklm" , result.data.specialt)
     setallDoctorRes(result.data.specialt)
     
+    console.log("setDOC",doc)
   setMesage(result.data.message)
   })
   .catch((err) => {
@@ -56,14 +57,32 @@ headers:{
 },
 
 })
+console.log(result)
 //.then((result) => {
   console.log("mkjiooooo")
-    console.log(result);
-    //GettALLspic()
-  // setSpecialt(result.data.specialt);
+    setResInfo(result.data.updatePatient);
+    
   console.log(result.data.specialt)
    // setallDoctorRes(result.data.specialt)
+
+   setTimeout(()=>{
+  
+  }, 5000);
+
+   const  docrorName= alldoctors.length>0 && alldoctors.filter((elem,i)=>{
+    return elem._id===resInfo.doctorRes
     
+  })
+  setNameBool(false)
+    
+    setDOC(docrorName)
+    console.log("mk",docrorName)
+  
+    
+  
+  
+  
+  // console.log(docrorName)
   setMesage(result.data.message)
 
  // })
@@ -78,6 +97,37 @@ headers:{
 
 
 
+
+const updateReservation= async()=>{
+try{
+  const result= await axios.put(`http://localhost:5000/reservation`,{
+date,time,doctorRes
+},
+{
+headers:{
+    Authorization:`bearer ${token}`
+},
+
+})
+
+setMesage(result.data.message)
+
+if(result.data.success){
+
+const newUpdateRes=result.map(()=>{})
+
+}
+
+}
+
+
+catch(err){
+
+  setMesage(err.response.data.message)
+    throw err;
+}
+
+}
 
 
 
@@ -186,14 +236,27 @@ return(
     {/* <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> */}
 
     <button onClick={addNewReservation}   class="registerbtn">Reservation</button>
+   
+
+    <div className="resDisplay"> 
+    Doctor Name:{nameBool&& doc[0].name}<dr></dr><hr></hr>
+    Time:{ resInfo.time}<dr></dr><hr></hr>
+         Date: {resInfo.date}  </div>
+    <button onClick={
+     updateReservation
+      } id="UpdateResevation"  class="registerbtn">Update</button>
+    <button id="deleteResevation"   class="registerbtn">Delete</button>
+    <p>{message}</p>
   </div>
   
   
-    <p>{message}</p>
+  
 
 
 
 </div>
+
+
 )
 
 }

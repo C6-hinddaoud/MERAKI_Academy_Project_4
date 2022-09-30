@@ -18,13 +18,14 @@ const createNewReservation = (req, res) => {
     .then((result) => {
 console.log("lj;lkjk")
         patientModel.updateOne({_id:userId},{doctor:doctorRes},{ new: true })
-        .then(()=>{
+        .then((n)=>{
           console.log("lllllllllll")
             //const resDate = new Date(result.date);
             res.status(201).json({
                 success: true,
                 message: `reservation created`,
                 updatePatient: result,
+             
               });
         
 

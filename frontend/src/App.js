@@ -15,9 +15,9 @@ import NewReservation from "./components/Reservation";
 function App() {
 
 
- // const[token,setToken]=useState("")
+  const[token,setToken]=useState("")
 
-  const[token,setToken]=useState((localStorage.getItem("token")||""))
+  //const[token,setToken]=useState((localStorage.getItem//("token")||""))
   const [specId,setSpecId]=useState(0)
   return (
     <authorContext.Provider value={{token,setToken,specId,setSpecId}}>
