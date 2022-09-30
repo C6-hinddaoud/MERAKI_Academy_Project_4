@@ -4,7 +4,7 @@ display: flex;
 
 }
 .react-calendar{
-height: 500px;
+/* height: 500px; */
 
 }
 
@@ -35,4 +35,12 @@ text-align: center;
 .resDisplay{
 
     border: 1px green solid;
+}
+
+.text-center{
+    background-color: white;
+    border: green 2px solid;
+}
+.spanres{
+    color: red;
 }

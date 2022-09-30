@@ -13,12 +13,14 @@ const NewReservation=()=>{
     const [limittime,setlimittime]=useState([9,10,11,12,1,2,3])
     const [doctorRes,setDoctorRes]=useState("")
     const [patientRes,setPatientRes]=useState("")
-const[nameBool,setNameBool]=useState(false)
-const [resInfo,setResInfo]=useState({})
-let [doc,setDOC]=useState([])
-const [alldoctors,setallDoctorRes]=useState([])
+    const[nameBool,setNameBool]=useState(false)
+    const [resInfo,setResInfo]=useState({})
+    let [doc,setDOC]=useState([])
+    const [alldoctors,setallDoctorRes]=useState([])
+    const [resevationDoctor,setResevationDoctor]=useState([])
 
-const [id,setID]=useState("")
+
+    const [id,setID]=useState("")
     const author=useContext(authorContext)
     const token=author.token
     const setToken=author.setToken
@@ -48,6 +50,14 @@ axios.get(`http://localhost:5000/doctors/spicilaty/${specId}`)
 
 
 const addNewReservation=async()=>{
+
+const found=resevationDoctor.map((elem)=>{
+if(elem.time==time&& elem.data==date){
+  return found
+}
+  
+})
+console.log("mn",found)
 
 try{
  const result= await axios.post(`http://localhost:5000/reservation`,{
@@ -146,7 +156,7 @@ catch(err){
 
 const deleteReservation=async()=>{
   try{
-    console.log("JI")
+    
     const result= await axios.delete(`http://localhost:5000/reservation/${id}`,
    {
    headers:{
@@ -156,21 +166,11 @@ const deleteReservation=async()=>{
    })
    console.log(result)
    setResInfo("")
-   //.then((result) => {
-     console.log("mkjiooooo")
-       //setResInfo(result.data.updatePatient);
+   
        
      console.log(result.data.specialt)
       // setallDoctorRes(result.data.specialt)
-   
-   
-     
-       
-     
-       
-     
-     
-     
+  
      // console.log(docrorName)
      setMesage(result.data.message)
    
@@ -184,6 +184,25 @@ const deleteReservation=async()=>{
 
 }
 
+const getallReservationInTheSameTime=async(id)=>{
+  //console.log("ooooooooo",doctorRes)
+try{
+ // const id=doctorRes
+const result=await axios.get(`http://localhost:5000/reservation/doc/${id}`)
+setResevationDoctor(result.data)
+console.log("result",result.data)
+//console.log("res",resevationDoctor)
+
+}
+catch(err){
+  console.log(err) 
+
+}
+
+
+}
+
+
 
 useEffect(()=>{
     GetAllDoctorINTheSameSpcality()
@@ -191,19 +210,17 @@ useEffect(()=>{
 },[])
 return(
     <div className="divmain">
-<div>
+<div className="text-center">
 <div className="calendar-container">
         <Calendar onChange={setDate} value={date} />
       </div>
       <div className="text-center">
-        {/* <input
-          placeholder="date"
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
-          value={date.toDateString()}
-        ></input>{" "} */}
-        {/* {date.toDateString()} */}
+       {
+    resevationDoctor.length>0&&   resevationDoctor.map((elem,i)=>{
+return (<p> <span className="spanres">time:</span>{ elem.time } <span className="spanres" >date:</span>  {elem.date} </p>)
+
+       })
+       }
       </div>
 </div>
 
@@ -235,8 +252,10 @@ return(
     <select
             onChange={(e) => {
               setDoctorRes(e.target.value);
+              
               console.log(doctorRes)
               console.log("date",date)
+              getallReservationInTheSameTime(e.target.value)
             }}
           >
             { alldoctors.length>0 &&  alldoctors.map((elem, i) => {

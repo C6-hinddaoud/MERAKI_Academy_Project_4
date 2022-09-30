@@ -9,6 +9,9 @@ const createNewReservation = (req, res) => {
     time,
     doctorRes,
   } = req.body;
+
+
+  
   const newReservation = new reservationModel({ date,
     time,
     doctorRes,
@@ -111,9 +114,20 @@ const updateReservationbyPatientId=(req,res)=>{
 
 }
 
+const GetAllReservationInTheSameReservation=(req,res)=>{
+  const id=req.params.id
+reservationModel.find({doctorRes:id}, "time date").populate("doctorRes", "name -_id")
+.then((result)=>{
+  
+res.json(result)
+})
+.catch((err)=>{
+res.json("err")
+
+})
+}
 
 
 
 
-
-module.exports = { createNewReservation,deleteReservationById ,updateReservationbyPatientId};
+module.exports = { createNewReservation,deleteReservationById ,updateReservationbyPatientId,GetAllReservationInTheSameReservation};

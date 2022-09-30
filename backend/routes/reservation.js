@@ -1,5 +1,6 @@
 const express = require("express");
 const { deleteReservationById } = require("../controllers/reservation.JS");
+const { GetAllReservationInTheSameReservation } = require("../controllers/reservation.JS");
 const { updateReservationbyPatientId } = require("../controllers/reservation.JS");
 const { createNewReservation } = require("../controllers/reservation.JS");
 const authentication = require("../middleware/authentication");
@@ -15,4 +16,6 @@ reservationRouter.post("/",authentication, authorization("Create_Reservation"),c
 
 reservationRouter.delete("/:id",authentication,deleteReservationById)
 reservationRouter.put("/",authentication,updateReservationbyPatientId)
+
+reservationRouter.get("/doc/:id",GetAllReservationInTheSameReservation)
 module.exports = reservationRouter
