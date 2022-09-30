@@ -11,6 +11,8 @@ const  reservationRouter=express.Router();
 
 
 reservationRouter.post("/",authentication, authorization("Create_Reservation"),createNewReservation);//authorization("Create_Reservation"),
-reservationRouter.delete("/",authentication,deleteReservationById)
+// reservationRouter.delete("/",authentication,deleteReservationById)
+
+reservationRouter.delete("/:id",authentication,deleteReservationById)
 reservationRouter.put("/",authentication,updateReservationbyPatientId)
 module.exports = reservationRouter

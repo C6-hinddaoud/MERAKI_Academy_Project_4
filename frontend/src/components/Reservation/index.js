@@ -17,6 +17,8 @@ const[nameBool,setNameBool]=useState(false)
 const [resInfo,setResInfo]=useState({})
 let [doc,setDOC]=useState([])
 const [alldoctors,setallDoctorRes]=useState([])
+
+const [id,setID]=useState("")
     const author=useContext(authorContext)
     const token=author.token
     const setToken=author.setToken
@@ -62,7 +64,8 @@ console.log(result)
   console.log("mkjiooooo")
     setResInfo(result.data.updatePatient);
     
-  console.log(result.data.specialt)
+  console.log("id",result.data.updatePatient._id)
+  setID(result.data.updatePatient._id)
    // setallDoctorRes(result.data.specialt)
 
    setTimeout(()=>{
@@ -113,8 +116,19 @@ headers:{
 setMesage(result.data.message)
 
 if(result.data.success){
-
-const newUpdateRes=result.map(()=>{})
+  console.log(result)
+console.log("lkomklojjl")
+console.log("t",result.data.reservation.time)
+console.log("s1",resInfo)
+console.log("d",result.data.reservation.date)
+console.log("s2",resInfo)
+setResInfo(result.data.reservation)
+//setResInfo(result.data.reservation.date)
+const  docrorName= alldoctors.length>0 && alldoctors.filter((elem,i)=>{
+  return elem._id===resInfo.doctorRes
+  
+})
+setNameBool(false)
 
 }
 
@@ -130,7 +144,45 @@ catch(err){
 }
 
 
+const deleteReservation=async()=>{
+  try{
+    console.log("JI")
+    const result= await axios.delete(`http://localhost:5000/reservation/${id}`,
+   {
+   headers:{
+       Authorization:`bearer ${token}`
+   },
+   
+   })
+   console.log(result)
+   setResInfo("")
+   //.then((result) => {
+     console.log("mkjiooooo")
+       //setResInfo(result.data.updatePatient);
+       
+     console.log(result.data.specialt)
+      // setallDoctorRes(result.data.specialt)
+   
+   
+     
+       
+     
+       
+     
+     
+     
+     // console.log(docrorName)
+     setMesage(result.data.message)
+   
+    // })
+   }
+     catch(err){
+       setMesage(err.response.data.message)
+       throw err;
+     };
+   
 
+}
 
 
 useEffect(()=>{
@@ -245,7 +297,7 @@ return(
     <button onClick={
      updateReservation
       } id="UpdateResevation"  class="registerbtn">Update</button>
-    <button id="deleteResevation"   class="registerbtn">Delete</button>
+    <button id="deleteResevation" onClick={deleteReservation}  class="registerbtn">Delete</button>
     <p>{message}</p>
   </div>
   

@@ -54,9 +54,10 @@ console.log("lj;lkjk")
 
 
 const deleteReservationById = (req, res) => {
-  const patientRes = req.token.userId;
+  //const patientRes = req.token.userId;
+  const id = req.params.id;
   reservationModel
-    .findOneAndDelete({patientRes:patientRes})
+    .findOneAndDelete({_id:id})
     .then((result) => {
       if (!result) {
         return res.status(404).json({
