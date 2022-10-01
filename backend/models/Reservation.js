@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 //const bcrypt=require("bcrypt")
 const reservationSchema = new mongoose.Schema({
-  date: { type: Date},
+  date: {type: String },
   time:{ type: String },
 
   doctorRes:{type: mongoose.Schema.Types.ObjectId,ref:"doctor" },

@@ -43,11 +43,12 @@ console.log( "mnmn", token)
 // {
 //   navgate("/Category");
 // }
+if(i==1){
 const myTimeout = setTimeout(5000);
 {
      navgate("/Category");
    }
-
+  }else{ navgate("/patient")}
 })
 .catch((err) => {
   setMesage(err.response.data.message)

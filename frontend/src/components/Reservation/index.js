@@ -8,7 +8,8 @@ import { useState, useEffect, useContext } from "react";
 import { authorContext } from "../../App";
 const NewReservation=()=>{
     const [message,setMesage]=useState("")
-    const [date, setDate] = useState(new Date());
+    /////////////////////////
+    const [date, setDate] = useState("");
     const [time,setTime]=useState("")
     const [limittime,setlimittime]=useState([9,10,11,12,1,2,3])
     const [doctorRes,setDoctorRes]=useState("")
@@ -26,6 +27,7 @@ const [calenderdate,setCalenderdate]=("")
     const setToken=author.setToken
     const specId=author.specId
     const setSpecId=author.setSpecId
+    const [valueoo, setvalue] = useState(new Date());
     
    const  GetAllDoctorINTheSameSpcality=()=>{
 
@@ -224,7 +226,7 @@ return(
     <div className="divmain">
 <div className="text-center">
 <div className="calendar-container">
-        <Calendar onChange={setDate} value={date}   />
+        <Calendar   onChange={setvalue} value={valueoo}/>
         {/* onChange={setDate} value={date} */}
       </div>
       <div className="text-center">
@@ -247,15 +249,19 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
 
     <label ><b>Reservation Date</b></label>
     <br></br>
-    <input disabled={true}
+   {/* //disabled={true} */}
+    <input 
           placeholder="date"
-          // onChange={(e) => {
-          //    setDate(e.target.value);
-          //   // setDate((e.target.value));
-          //   // console.log(date)
-          // }}
-          value={date}
-        ></input>{" "}
+          // {setDate($("#nameofid").val())}
+          onChange={(e) => {
+            //valueoo.toDateString()
+            setDate(e.target.value);
+             console.log("mnj",date)
+          }}
+          
+          value={valueoo.toDateString()}
+        ></input>
+       
 {/* //date.toDateString() */}
 
     <div style={{ margin: "60px" }}>
@@ -263,22 +269,27 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
             <b>Docrors</b>
           </label>
           <br></br>
-    <select
+    <select placeholder="Select Doctor "
+  
             onChange={(e) => {
               setDoctorRes(e.target.value);
               
               console.log(doctorRes)
-              console.log("date",date)
+             // console.log("date",date.toDateString())
               getallReservationInTheSameTime(e.target.value)
             }}
           >
+          <option disabled selected value> -- select an Dector -- </option>
             { alldoctors.length>0 &&  alldoctors.map((elem, i) => {
               return (
+                
                 <option
+            
                   value={elem._id}
 
                   // textContent={elem.specialty}
                 >
+                 
                   {elem.name}
                 </option>
               );
@@ -299,6 +310,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
               console.log("time",time)
             }}
           >
+            <option disabled selected value> -- select an time -- </option>
             {   limittime.map((elem, i) => {
               return (
                 <option
