@@ -269,7 +269,8 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
             <b>Docrors</b>
           </label>
           <br></br>
-    <select placeholder="Select Doctor "
+         
+    <select id={"jk"} placeholder="Select Doctor "
   
             onChange={(e) => {
               setDoctorRes(e.target.value);
@@ -295,7 +296,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
               );
             })}
           </select>
-
+         
 </div>
 
     
@@ -305,7 +306,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
           </label>
           <br></br>
     <select
-            onChange={(e) => {
+             onChange={(e) => {
               setTime(e.target.value);
               console.log("time",time)
             }}

@@ -20,8 +20,8 @@ const PatientInfo=()=>{
     const setSpecId=author.setSpecId
     const [message, setMesage] = useState("");
     const [patInfoo,setPatinfo]=useState([])
-
-
+    const [firstName, setFirstName] = useState("");
+const[array,setArray]=useState([])
 
 //     const GetALLPatientInTheSameDoctor=()=>{
 // axios.get("http://localhost:5000/doctors/search_1",{
@@ -65,6 +65,55 @@ const getAllPatientInTheSameDoctor=async()=>{
 
 }
 
+const searchPatient=async()=>{
+
+//let firstName=firstName
+
+
+
+
+try{
+    const result= await axios.get(`http://localhost:5000/doctors/search_2?firstName=${firstName}`,
+  {
+  headers:{
+      Authorization:`bearer ${token}`
+  },
+  
+  })
+ 
+  const newsearch = result.data.patient.map((elem,i)=>{
+    console.log("k")
+    console.log("k",elem.firstName)
+    console.log("k",firstName)
+    return elem.firstName ==result.data.patient.firstName
+  })
+  console.log("n",setArray(newsearch))
+  console.log(newsearch)
+return array
+  setMesage(result.data.message)
+  
+  
+    console.log("ncn",result.data
+    )
+    console.log("m",result.data.patient
+    )
+    
+  }
+  
+  catch(err){
+  
+    setMesage(err.response.data.message)
+    //  throw err;
+  }
+
+
+
+
+
+
+}
+
+
 useEffect(()=>{
     getAllPatientInTheSameDoctor()
     console.log(token)
@@ -82,8 +131,8 @@ return(<div className="patintDev">
 
     <div>navbar</div>
     <div>
-    <input className="searchInfo" type="text"></input>
-    <button className="ptnSearc" type=""> Search</button>
+    <input onChange={(e)=>{setFirstName(e.target.value)}} className="searchInfo" type="text"></input>
+    <button  onClick={searchPatient}  className="ptnSearc" type=""> Search</button>
     </div>
     <div>
 
@@ -96,7 +145,7 @@ return(<div className="patintDev">
 
       
   
-  </label > <button className="patientInfo">Patient  Information</button>
+  </label > <button onClick={searchPatient} className="patientInfo">Patient  Information</button>
   </div>
 
 })
