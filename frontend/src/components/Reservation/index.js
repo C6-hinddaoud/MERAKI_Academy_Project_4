@@ -18,8 +18,8 @@ const NewReservation=()=>{
     let [doc,setDOC]=useState([])
     const [alldoctors,setallDoctorRes]=useState([])
     const [resevationDoctor,setResevationDoctor]=useState([])
-
-
+const[doctorName,setDoctorName]=useState("")
+const [calenderdate,setCalenderdate]=("")
     const [id,setID]=useState("")
     const author=useContext(authorContext)
     const token=author.token
@@ -51,12 +51,22 @@ axios.get(`http://localhost:5000/doctors/spicilaty/${specId}`)
 
 const addNewReservation=async()=>{
 
-const found=resevationDoctor.map((elem)=>{
-if(elem.time==time&& elem.data==date){
-  return found
+const found=resevationDoctor.filter((elem)=>{
+  console.log("oop",elem)
+   console.log("er",elem.time,"er",time,"er",elem.date,"er",date)
+  console.log("mnmnmnmnkk",elem.date)
+  //&& date==elem.date 
+if( elem.time==time.l   ){
+  //console.log("ermnmnmn", elem.time,time,elem.date,date)
+  return elem.time==time
 }
-  
+
 })
+console.log("go",found)
+if (found.length>0){
+  setMesage("This time has been booked. Please choose another time")
+}
+else{
 console.log("mn",found)
 
 try{
@@ -89,7 +99,7 @@ console.log(result)
   setNameBool(false)
     
     setDOC(docrorName)
-    console.log("mk",docrorName)
+    //console.log("mk",docrorName)
   
     
   
@@ -105,7 +115,7 @@ console.log(result)
     throw err;
   };
 
-
+}
 }
 
 
@@ -190,7 +200,9 @@ try{
  // const id=doctorRes
 const result=await axios.get(`http://localhost:5000/reservation/doc/${id}`)
 setResevationDoctor(result.data)
-console.log("result",result.data)
+setDoctorName(result.data[0].doctorRes.name)
+console.log("resulttt",result.data[0].doctorRes.name
+)
 //console.log("res",resevationDoctor)
 
 }
@@ -212,7 +224,8 @@ return(
     <div className="divmain">
 <div className="text-center">
 <div className="calendar-container">
-        <Calendar onChange={setDate} value={date} />
+        <Calendar onChange={setDate} value={date}   />
+        {/* onChange={setDate} value={date} */}
       </div>
       <div className="text-center">
        {
@@ -236,13 +249,14 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
     <br></br>
     <input disabled={true}
           placeholder="date"
-          onChange={(e) => {
-            // setDate(e.target.value);
-            // console.log(date)
-          }}
-          value={date.toDateString()}
+          // onChange={(e) => {
+          //    setDate(e.target.value);
+          //   // setDate((e.target.value));
+          //   // console.log(date)
+          // }}
+          value={date}
         ></input>{" "}
-
+{/* //date.toDateString() */}
 
     <div style={{ margin: "60px" }}>
           <label>
@@ -310,7 +324,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
    
 
     <div className="resDisplay"> 
-    Doctor Name:{nameBool&& doc[0].name}<dr></dr><hr></hr>
+    Doctor Name:{doctorName}  {nameBool&& doc[0].name}<dr></dr><hr></hr>
     Time:{ resInfo.time}<dr></dr><hr></hr>
          Date: {resInfo.date}  </div>
     <button onClick={
