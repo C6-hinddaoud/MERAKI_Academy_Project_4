@@ -1,16 +1,17 @@
 .patintDev{
 
     
-    border: 1px black solid;
+    border: 1px#04AA6D solid;
     background-color: white;
     height: 500px;
 }
 .searchInfo{
     width: 70% !important;
+    border: 1px#04AA6D solid;
     
 }
 .ptnSearc{
-
+    
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
@@ -21,16 +22,42 @@
     opacity: 0.9;
 }
 .patientInfo{
-    background-color: #4e0404e7;
+    background-color: #7faaace7;
     color: white;
     padding: 16px 20px;
+    border: none;
 }
 .lblInfp{
-    width: 60%;
+    width: 75%;
     padding: 16px 20px;
     margin: 5px 0 22px 0;
     display: inline-block;
-    border: none;
+    border:none;
     background: #f1f1f1;
 
+}
+.sI{
+
+    background-color:     #e5e5e5;;
+}
+.secinf{
+    display: flex
+
+}
+.divSimg{
+    width: 50%;
+}
+.Simg{
+    width: 100%;
+    height: 100%;
+}
+.lblsinfo{
+    width: 100%;
+    display: inline-block;
+    padding: 16px 20px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+}
+.lblDiv{
+    width: 50%;
 }

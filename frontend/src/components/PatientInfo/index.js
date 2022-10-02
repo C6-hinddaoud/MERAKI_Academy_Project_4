@@ -22,6 +22,9 @@ const PatientInfo=()=>{
     const [patInfoo,setPatinfo]=useState([])
     const [firstName, setFirstName] = useState("");
 const[array,setArray]=useState([])
+const[bollDiv,setBollDiv]=useState(true)
+
+const[onElem,setOnElem]=useState({})
 
 //     const GetALLPatientInTheSameDoctor=()=>{
 // axios.get("http://localhost:5000/doctors/search_1",{
@@ -34,6 +37,24 @@ const[array,setArray]=useState([])
 // .catch()
 
 //     }
+
+
+const addMidicen=()=>{
+axios.post("")
+
+
+}
+
+
+
+
+
+
+
+const patientDetael=(elem)=>{
+ setOnElem(elem)
+  setBollDiv(false)
+}
 
 const getAllPatientInTheSameDoctor=async()=>{
 
@@ -81,15 +102,17 @@ try{
   
   })
  
-  const newsearch = result.data.patient.map((elem,i)=>{
-    console.log("k")
-    console.log("k",elem.firstName)
-    console.log("k",firstName)
-    return elem.firstName ==result.data.patient.firstName
-  })
-  console.log("n",setArray(newsearch))
-  console.log(newsearch)
-return array
+//   const newsearch = patInfoo.filter((elem,i)=>{
+//     console.log("ru",result)
+//     console.log("k",elem.firstName)
+//   let nr=  console.log("k",result.data.patient.map((elem,i)=>{
+// return[elem.firstName]
+//     }))
+//     return elem.firstName ==JSON.stringify( nr)
+//   })
+setPatinfo(result.data.patient)
+  console.log( "okok", patInfoo)
+//return array
   setMesage(result.data.message)
   
   
@@ -130,8 +153,11 @@ useEffect(()=>{
 return(<div className="patintDev">
 
     <div>navbar</div>
+    {bollDiv?
     <div>
-    <input onChange={(e)=>{setFirstName(e.target.value)}} className="searchInfo" type="text"></input>
+    <div className="sI">
+    <input onChange={(e)=>{setFirstName(e.target.value)
+     }} className="searchInfo" type="text"></input>
     <button  onClick={searchPatient}  className="ptnSearc" type=""> Search</button>
     </div>
     <div>
@@ -145,7 +171,7 @@ return(<div className="patintDev">
 
       
   
-  </label > <button onClick={searchPatient} className="patientInfo">Patient  Information</button>
+  </label > <button onClick={()=>{patientDetael(elem)}} className="patientInfo">Patient  Information</button>
   </div>
 
 })
@@ -158,6 +184,42 @@ return(<div className="patintDev">
         
     </div>
    <div><p>{message}</p></div>
+   </div>
+   :<div>
+    
+    
+    <div className="secinf">
+    <div className="divSimg">< img className="Simg" src="./images/gallery-3.jpg"></img></div>
+    <div className="lblDiv">
+    <label className="lblsinfo">
+          <b className="lblsinfo"> Patient Name: {onElem.firstName}</b>
+        </label>
+        <label className="lblsinfo">
+          <b className="lblsinfo"> Family Name: {onElem.lastName}</b>
+        </label>
+        <label className="lblsinfo">
+          <b className="lblsinfo"> Patient Age: {onElem.age}</b>
+        </label>
+        <label className="lblsinfo">
+          <b className="lblsinfo"> Patient country: {onElem.country}</b>
+        </label>
+        <label className="lblsinfo">
+          <b className="lblsinfo"> Patient phone: {onElem.phone}</b>
+        </label>
+        <label className="lblsinfo">
+          <b className="lblsinfo"> Patient prescription: {onElem.prescription}</b>
+          
+        </label>
+        <input className="perInpur" type="text"></input>
+        <button onClick={addMidicen}>AddToLIST</button>
+        <button> Delete</button>
+        <button>UPdate </button>
+    </div>
+   
+    
+    </div>
+    <button onClick={()=>{setBollDiv(true)}}>Go Back</button>
+    </div>}
 </div>)
 
 }
