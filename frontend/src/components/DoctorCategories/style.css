@@ -23,7 +23,7 @@ body {
 
  }
  .imgregester{
-width: 300px;
+/* width: 300px; */
 height: 100%;
 
  }
@@ -35,18 +35,28 @@ height: 100%;
   * {
     box-sizing: border-box;
   }
+  .reservationH1{
+    /* background-color: rgba(255, 187, 0, 0.87) ; */
+    background-color:#E3E36A
+  }
   
   /* Add padding to containers */
   .containerr {
-    border: 1px #04aa6d solid;
+    border: 2px #04aa6d solid;
     gap: 2px;
     border-radius: 36px;
     padding: 16px;
     background-color: white;
-    width: 50%;
+    width: 80%;
+    gap: 1%;
   }
   .imgCatiegory{
-    width: 10%;
+    width:70%;
+
+  }
+  .imgCatiegory:hover{
+  color: #E3E36A;
+    
   }
   /* Full-width input fields */
   input[type=text], input[type=password] {
@@ -58,7 +68,8 @@ height: 100%;
     background: #f1f1f1;
   }
   .pw{
-    width: 20%;
+    background-color: azure;
+    text-align: left;
   }
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
@@ -82,6 +93,10 @@ height: 100%;
     width: 100%;
     opacity: 0.9;
   }
+  .registerbtn:hover {
+color: #E3E36A;
+font-size: large;
+  }
 
 
   .reservationH1{
@@ -90,7 +105,7 @@ color: white;
   }
   
   .registerbtn:hover {
-    opacity: 1;
+    opacity: 0.5;
   }
   
   /* Add a blue text color to links */
