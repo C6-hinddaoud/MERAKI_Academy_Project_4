@@ -228,7 +228,7 @@ return(<div className="patintDev">
     
     
     <div className="secinf">
-    <div className="divSimg">< img className="Simg" src="./images/images.jpg"></img></div>
+    <div className="divSimg">< img className="Simg" src="./assets/images/doc1.jpg"></img></div>
     <div className="lblDiv">
     <label className="lblsinfo">
           <b className="lblsinfo"> Patient Name: {onElem.firstName}</b>

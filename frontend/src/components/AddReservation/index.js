@@ -103,7 +103,7 @@ return(
     {selectedImage && (
       <div>
       {/* <img alt="not fount" width={"20%"} src={`./assets/images/${selectedImage}`  }></img> */}
-      <img alt="not fount" width={"50%"} src={URL.createObjectURL(selectedImage)} />
+      <img alt="not fount" width={"80%"} height={"1%"} src={URL.createObjectURL(selectedImage)} />
       <br />
       <button className="registerbtnmove" onClick={()=>setSelectedImage(null)}>Remove</button>
       </div>
@@ -111,7 +111,7 @@ return(
     <br />
    
     <br /> 
-    <input
+    {/* <input
     className="registerbtnn"
       type="file"
       name="myImage"
@@ -119,7 +119,7 @@ return(
         console.log("ll",event.target.files[0]);
         setSelectedImage(event.target.files[0]);
       }}
-    />
+    /> */}
 
 <input
     className="registerbtnn"
@@ -131,7 +131,7 @@ return(
        
         uploadImage(event.target.files[0]);
         console.log("m",image)
-        
+        setSelectedImage(event.target.files[0]);
       }}
     />
 
