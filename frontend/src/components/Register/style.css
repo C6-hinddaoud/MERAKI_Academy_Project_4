@@ -62,7 +62,7 @@ height: 100%;
   }
   
   .registerbtn:hover {
-    opacity: 1;
+    opacity: 0.5;
   }
   
   /* Add a blue text color to links */

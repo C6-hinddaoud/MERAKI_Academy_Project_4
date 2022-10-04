@@ -1,9 +1,11 @@
 const specialtyModel = require("../models/specialty");
 
 // This function creates new role
+
+
 const createNewspecialty = (req, res) => {
-  const { specialty } = req.body;
-  const newSpicality = new specialtyModel({specialty });
+  const { specialty ,description,selectedImage} = req.body;
+  const newSpicality = new specialtyModel({specialty,description,selectedImage });
   newSpicality
     .save()
     .then((result) => {

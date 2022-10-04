@@ -50,17 +50,25 @@ return(
     <div>
 <h1 className="reservationH1">Choose the medical specialty you want</h1>
 
-<div className=" DivCatecontainer">
+<div className=" DivCate container">
 
 { specialt.length>0&&  specialt.map((elem, i) => {
               return (
-                <div className=" container "
+                <div className=" containerr "
                   value={elem._id}
 
                   // textContent={elem.specialty}
                 >
-                  {elem.specialty}
+                 <h3> {elem.specialty}</h3>
                   <br></br>
+                  <div>
+                  <p className="pw">{elem.description}</p>
+                  </div>
+                  <br></br>
+                  <div>
+                    
+             <img className="imgCatiegory" src={ elem.selectedImage}></img>
+                  </div>
                   <button onClick={()=>{
                     navgate("/reservation")
                     setSpecId(elem._id)

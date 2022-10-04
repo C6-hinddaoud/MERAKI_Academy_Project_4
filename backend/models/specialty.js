@@ -2,8 +2,14 @@ const mongoose = require("mongoose");
 //const bcrypt=require("bcrypt")
 const specialtySchema = new mongoose.Schema({
 
-    specialty:{ type: String }
-  
+    specialty:{ type: String },
+  description:{ type: String },
+  selectedImage:{type: String}
+//   {
+      
+//       contentType: String
+//   },
+
 });
 
 // userSchema.pre("save" , async function(){

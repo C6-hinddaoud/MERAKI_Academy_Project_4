@@ -151,7 +151,7 @@ const Register = () => {
           required
         ></input>
 
-        <label for="psw">
+        <label >
           <b>Password</b>
         </label>
         <input
@@ -165,7 +165,7 @@ const Register = () => {
           required
         ></input>
 
-        <label for="psw-repeat">
+        <label >
           <b>Repeat Password</b>
         </label>
         <input

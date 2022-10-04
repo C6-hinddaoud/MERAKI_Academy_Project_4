@@ -66,7 +66,7 @@ const myTimeout = setTimeout(5000);
 
 <div className="mainIntroDev">
       <div className="imgregester">
-        <img  className="" src="./gallery-1.jpg" alt="pic"></img>
+        <img  className="" src="./assets/images/gallery-1.jpg" alt="pic"></img>
       </div>
       <div className="container">
         <h1>Login</h1>

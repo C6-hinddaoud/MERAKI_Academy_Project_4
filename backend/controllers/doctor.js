@@ -131,4 +131,9 @@ console.log("lkj")
 }
 
 
-module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor,gitpatientpyName};
+const getDoctorInformationALLdocr=(req,res)=>{
+
+
+}
+
+module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor,gitpatientpyName,getDoctorInformationALLdocr};

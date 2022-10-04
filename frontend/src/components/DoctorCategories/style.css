@@ -37,12 +37,17 @@ height: 100%;
   }
   
   /* Add padding to containers */
-  .container {
-    
+  .containerr {
+    border: 1px #04aa6d solid;
+    gap: 2px;
+    border-radius: 36px;
     padding: 16px;
     background-color: white;
+    width: 50%;
   }
-  
+  .imgCatiegory{
+    width: 10%;
+  }
   /* Full-width input fields */
   input[type=text], input[type=password] {
     width: 100%;
@@ -52,7 +57,9 @@ height: 100%;
     border: none;
     background: #f1f1f1;
   }
-  
+  .pw{
+    width: 20%;
+  }
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
