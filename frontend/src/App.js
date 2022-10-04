@@ -8,6 +8,8 @@ import ReqesterPatient from "./components/RegisterAsPatient";
 import Category from "./components/DoctorCategories";
 import NewReservation from "./components/Reservation";
 import PatientInfo from "./components/PatientInfo";
+import Specialty from "./components/AddReservation";
+
  export const authorContext=createContext()
 
 
@@ -16,9 +18,9 @@ import PatientInfo from "./components/PatientInfo";
 function App() {
 
 
-  const[token,setToken]=useState("")
+  //const[token,setToken]=useState("")
 
-  //const[token,setToken]=useState((localStorage.getItem//("token")||""))
+  const[token,setToken]=useState((localStorage.getItem("token"))||"");
   const [specId,setSpecId]=useState(0)
   return (
     <authorContext.Provider value={{token,setToken,specId,setSpecId}}>
@@ -34,6 +36,7 @@ function App() {
       <Route  path="/Category"  element={<Category/>}></Route>
       <Route path="/reservation" element={<NewReservation/>}></Route>
       <Route path="/patient"   element={<PatientInfo/>}></Route>
+      <Route path="/Specialty"   element={<Specialty/>}></Route>
 </Routes>
     </div>
     </authorContext.Provider>

@@ -51,13 +51,89 @@
     width: 100%;
     height: 100%;
 }
-.lblsinfo{
+.lblsinfo {
     width: 100%;
     display: inline-block;
-    padding: 16px 20px;
-    margin: 5px 0 22px 0;
+    /* padding: 16px 20px; */
+    margin: 5px 0 10px 0;
     background: #f1f1f1;
 }
 .lblDiv{
     width: 50%;
 }
+
+header.header_sticky.sticky {
+    border-bottom: 1px solid #ededed;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999999;
+}
+
+header {
+    background-color: #fff;
+    min-height: 55px;
+    padding: 10px 0;
+    border-bottom: 1px solid transparent;}
+
+
+    .navbardoc{
+        display: flex;
+
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+ background-color: #e5e5e5;
+    }
+    .NAV{
+        width: 25%;
+        height: 5%;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        /* height: 21PX; */
+        font-size: 50%;
+        font-size: 72%;
+        font-family: bold;
+        color: white;
+        background-color: #377976;
+        font-weight: bold;
+        /* background-color: #e5e5e5; */
+    }
+    .imglogo{
+height: 80%;
+width: 73%;
+
+    }
+    .NAV:hover{
+        color: rgb(232, 159, 99);
+        font-size: 100%;
+    }
+    .ptnSearc:hover{
+        color: rgb(232, 159, 99);
+        font-size: 100%;
+    }
+    .patientInfo:hover{
+        color: rgb(232, 159, 99);
+        font-size: 100%;
+
+    }
+
+    .precDiv {
+        width: 100%;
+        font-size: 72%;
+        font-family: initial;
+        color: #6a868e;
+        border: 5px solid;
+    }
+    .goBack {
+        width: 100%;
+        color: white;
+        background-color: #2e6f56;
+        font-size: 115%;
+    }
+
+    .goBack:hover{
+        color: rgb(232, 159, 99);
+        font-size: 100%;
+    }

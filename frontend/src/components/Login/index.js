@@ -34,9 +34,10 @@ password
 .then((result) => {
   console.log(result);
   //GettALLspic()
+  setToken(result.data.token);
 // setSpecialt(result.data.specialt);
-//localStorage.setItem("token",result.data.token)
-setToken(result.data.token);
+localStorage.setItem("token",result.data.token)
+
 setMesage(result.data.message)
 console.log( "mnmn", token)
 

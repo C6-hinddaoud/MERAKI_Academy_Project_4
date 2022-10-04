@@ -6,10 +6,12 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useState, useEffect, useContext } from "react";
 import { authorContext } from "../../App";
+import {useRef} from 'react';
 const NewReservation=()=>{
     const [message,setMesage]=useState("")
     /////////////////////////
     const [date, setDate] = useState("");
+    // const date = useRef(null);
     const [time,setTime]=useState("")
     const [limittime,setlimittime]=useState([9,10,11,12,1,2,3])
     const [doctorRes,setDoctorRes]=useState("")
@@ -50,15 +52,18 @@ axios.get(`http://localhost:5000/doctors/spicilaty/${specId}`)
 
     }
 
-
+   
 const addNewReservation=async()=>{
-
+  let newdate= await (valueoo).toDateString()
+    setDate(newdate)
+  console.log("valuuuu",date)
 const found=resevationDoctor.filter((elem)=>{
   console.log("oop",elem)
    console.log("er",elem.time,"er",time,"er",elem.date,"er",date)
   console.log("mnmnmnmnkk",elem.date)
   //&& date==elem.date 
-if( elem.time==time.l   ){
+ 
+if( elem.time==time&& date==elem.date  ){
   //console.log("ermnmnmn", elem.time,time,elem.date,date)
   return elem.time==time
 }
@@ -124,6 +129,7 @@ console.log(result)
 
 
 const updateReservation= async()=>{
+  
 try{
   const result= await axios.put(`http://localhost:5000/reservation`,{
 date,time,doctorRes
@@ -219,10 +225,13 @@ catch(err){
 
 
 useEffect(()=>{
+
+  if(!alldoctors.length>0){
     GetAllDoctorINTheSameSpcality()
-    
+  }
 },[])
 return(
+ 
     <div className="divmain">
 <div className="text-center">
 <div className="calendar-container">
@@ -232,7 +241,9 @@ return(
       <div className="text-center">
        {
     resevationDoctor.length>0&&   resevationDoctor.map((elem,i)=>{
-return (<p> <span className="spanres">time:</span>{ elem.time } <span className="spanres" >date:</span>  {elem.date} </p>)
+return (<p> <span className="spanres">time:</span>{ elem.time } <span className="spanres" >date:</span>  {elem.date} 
+
+</p>)
 
        })
        }
@@ -253,15 +264,19 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
     <input 
           placeholder="date"
           // {setDate($("#nameofid").val())}
-          onChange={(e) => {
-            //valueoo.toDateString()
-            setDate(e.target.value);
-             console.log("mnj",date)
-          }}
           
+          onchange={(e) => {
+            //valueoo.toDateString()
+          // setDate(e.target.value);
+           //  console.log("mnj",date)
+          }}
+          // {setDate(valueoo)}
           value={valueoo.toDateString()}
+          
+         
         ></input>
-       
+         
+        {/* {setDate(valueoo.toDateString())} */}
 {/* //date.toDateString() */}
 
     <div style={{ margin: "60px" }}>
@@ -333,7 +348,8 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
     <hr></hr>
     {/* <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> */}
 
-    <button onClick={addNewReservation}   class="registerbtn">Reservation</button>
+    <button onClick={addNewReservation}
+      class="registerbtn">Reservation</button>
    
 
     <div className="resDisplay"> 

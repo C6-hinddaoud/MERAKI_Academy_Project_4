@@ -98,7 +98,7 @@ console.log("lkj")
   const doctor=req.token.userId;
   const name=req.token.name
   const firstName=req.query.firstName
-  const regex=new RegExp(firstName,"gi")
+  const regex=new RegExp(firstName,'g')
   console.log(regex)
   patientModel.find({doctor:doctor , firstName:{$regex:regex}})
   .then((result) => {
@@ -112,7 +112,7 @@ console.log("lkj")
     }else{
     res.status(201).json({
       success: true,
-      message: `This is info about Patient :${firstName}`,
+      message: `This is info about  :${firstName}`,
       patient: result,
     });
   }

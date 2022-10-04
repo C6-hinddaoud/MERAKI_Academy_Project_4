@@ -3,7 +3,7 @@ import axios from "axios"
 import { authorContext } from "../../App"
 import { useState,useContext,useEffect } from "react"
 
-
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -12,7 +12,7 @@ import { useState,useContext,useEffect } from "react"
 
 
 const PatientInfo=()=>{
-
+const navgat=new useNavigate()
     const author=useContext(authorContext)
     const token=author.token
     const setToken=author.setToken
@@ -25,7 +25,11 @@ const[array,setArray]=useState([])
 const[bollDiv,setBollDiv]=useState(true)
 
 const[onElem,setOnElem]=useState({})
+const[medicine,setMedicine]=useState([])
+const[arrayMedicine,setArrayMedicine]=useState([])
 
+const [seArchBool,setSeArchBool]=useState(true)
+const [medo,setmedo]=useState("")
 //     const GetALLPatientInTheSameDoctor=()=>{
 // axios.get("http://localhost:5000/doctors/search_1",{
 //     headers:{
@@ -38,26 +42,44 @@ const[onElem,setOnElem]=useState({})
 
 //     }
 
-
-const addMidicen=()=>{
-axios.post("")
-
-
-}
-
-
-
-
-
-
-
+// 
 const patientDetael=(elem)=>{
+  console.log("detils")
  setOnElem(elem)
+ const med=elem.prescription
+ {setMedicine(med)}
+ console.log("nv",medicine)
   setBollDiv(false)
 }
 
-const getAllPatientInTheSameDoctor=async()=>{
 
+const addMidicen=()=>{
+axios.post(`http://localhost:5000/prescription/${onElem._id}`,{medicine:medo})
+.then((result)=>{
+  console.log(result)
+  let newresult=result.data.updatePatient.medicine
+console.log(newresult)
+  //console.log("re",result)
+  setMedicine([...medicine,newresult])
+  console.log("pof",medicine)
+  console.log("med",medicine)
+})
+.catch((err)=>{
+  console.log(err)
+})
+
+}
+
+
+
+
+
+
+
+
+
+const getAllPatientInTheSameDoctor=async()=>{
+  
     try{
       const result= await axios.get(`http://localhost:5000/doctors/search_1`,
     {
@@ -66,15 +88,17 @@ const getAllPatientInTheSameDoctor=async()=>{
     },
     
     })
-   
+
+    // {setMedicine(result.data.specialt.prescription)} 
 
  
     setMesage(result.data.message)
     
     
-      console.log("ncn",result.data.specialt
-      )
+      console.log("ncn",result.data.specialt.prescription)
       console.log("m",result)
+    //  {setMedicine(result.data.specialt.prescription)} 
+      console.log("medicine" ,medicine)
       setPatinfo(result.data.specialt)
     }
     
@@ -88,7 +112,9 @@ const getAllPatientInTheSameDoctor=async()=>{
 
 const searchPatient=async()=>{
 
-//let firstName=firstName
+// if(!firstName){
+//   return(patInfoo)
+// }
 
 
 
@@ -101,7 +127,8 @@ try{
   },
   
   })
- 
+  console.log("mmmmm",result)
+ if(result.data.patient.length>0){
 //   const newsearch = patInfoo.filter((elem,i)=>{
 //     console.log("ru",result)
 //     console.log("k",elem.firstName)
@@ -118,9 +145,13 @@ setPatinfo(result.data.patient)
   
     console.log("ncn",result.data
     )
-    console.log("m",result.data.patient
+    console.log("m",result.data.patient.specialt.prescription
+
     )
-    
+ }else{
+  setMesage("There is no patient with this name")
+  setPatinfo([])
+ }
   }
   
   catch(err){
@@ -138,8 +169,10 @@ setPatinfo(result.data.patient)
 
 
 useEffect(()=>{
+  if(!patInfoo.length>0){
     getAllPatientInTheSameDoctor()
-    console.log(token)
+  }
+   // console.log(token)
    
 },[])
     
@@ -152,7 +185,13 @@ useEffect(()=>{
 
 return(<div className="patintDev">
 
-    <div>navbar</div>
+    <div  className="navbardoc">
+    <div className="NAV"><img className="imglogo" src="./images/logo.png"></img></div>
+<div  onClick={()=>{navgat('/Register')}} className="NAV">Show Doctor Information</div>
+<div className="NAV"> Add New specialty </div>
+
+      <div onClick={()=>{navgat('/Register')}}  className="NAV">  Add New Doctor </div>
+    </div>
     {bollDiv?
     <div>
     <div className="sI">
@@ -189,7 +228,7 @@ return(<div className="patintDev">
     
     
     <div className="secinf">
-    <div className="divSimg">< img className="Simg" src="./images/gallery-3.jpg"></img></div>
+    <div className="divSimg">< img className="Simg" src="./images/images.jpg"></img></div>
     <div className="lblDiv">
     <label className="lblsinfo">
           <b className="lblsinfo"> Patient Name: {onElem.firstName}</b>
@@ -207,10 +246,13 @@ return(<div className="patintDev">
           <b className="lblsinfo"> Patient phone: {onElem.phone}</b>
         </label>
         <label className="lblsinfo">
-          <b className="lblsinfo"> Patient prescription: {onElem.prescription}</b>
-          
+          <b className="lblsinfo"> Patient prescription: {medicine.length>0&&medicine.map((elem)=>{
+
+            return(<div className="precDiv">{elem}</div>)
+          })}</b>
+          {/* {setMedicine(onElem?.prescription)} */}
         </label>
-        <input className="perInpur" type="text"></input>
+        <input onChange={(e)=>{setmedo(e.target.value)}} className="perInpur" type="text"></input>
         <button onClick={addMidicen}>AddToLIST</button>
         <button> Delete</button>
         <button>UPdate </button>
@@ -218,7 +260,7 @@ return(<div className="patintDev">
    
     
     </div>
-    <button onClick={()=>{setBollDiv(true)}}>Go Back</button>
+    <button className="goBack" onClick={()=>{setBollDiv(true)}}>Go Back</button>
     </div>}
 </div>)
 
