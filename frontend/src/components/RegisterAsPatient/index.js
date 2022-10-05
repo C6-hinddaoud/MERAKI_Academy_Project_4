@@ -13,7 +13,7 @@ const ReqesterPatient=()=>{
   const author=useContext(authorContext)
     const token=author.token
     const setToken=author.setToken
-
+const[updatId,setupdatId]=useState(0)
     const[message,setMesage]=useState("")
     const[firstName,setFirstName]=useState("")
 
@@ -44,7 +44,7 @@ axios.post(`http://localhost:5000/patients`,{
     console.log(result);
     //GettALLspic()ccc
   // setSpecialt(result.data.specialt);
-  
+  setupdatId(result.data.patient._id)
   setMesage(result.data.message)
  setUpdatesBool(true)
   })
@@ -61,22 +61,20 @@ axios.post(`http://localhost:5000/patients`,{
 
 
 
-const upddatPatient=()=>{
-  axios.put(`http://localhost:5000/patients`,{
+const upddatPatient=(updatId)=>{
+  console.log(firstName)
+  console.log(lastName)
+  console.log(typeof(age))
+  axios.put(`http://localhost:5000/patients/${updatId}`,{
 
 
     firstName,
-    lastName,
+   lastName,
     age,
     country,
     email,
     password,
     phone
-
-},{
-  headers:{
-    Authorization:`bearer ${token}`
-},
 
 })
 .then((result) => {
@@ -96,6 +94,26 @@ const upddatPatient=()=>{
 }
 
 
+const deletPatient=()=>{
+
+  console.log(firstName)
+  console.log(lastName)
+  console.log(typeof(age))
+  axios.delete(`http://localhost:5000/patients/${updatId}`)
+  .then((result) => {
+    console.log(result);
+    //GettALLspic()ccc
+  // setSpecialt(result.data.specialt);
+  
+  setMesage(result.data.message)
+
+  })
+  .catch((err) => {
+    setMesage(err.response.data.message)
+  
+  });
+
+}
 
 
 
@@ -115,7 +133,7 @@ const upddatPatient=()=>{
     <input onChange={(e)=>{setLastName(e.target.value)}} type="text" placeholder="Enter Last Name" name="email"  required></input>
 
     <label ><b>Age</b></label>
-    <input onChange={(e)=>{setAge(e.target.value)}} type="text" placeholder="Enter Your Age" name="email"  required></input>
+    <input onChange={(e)=>{setAge(e.target.valueAsNumber)}} type="text" placeholder="Enter Your Age" name="email"  required></input>
 
     <label ><b>Country</b></label>
     <input onChange={(e)=>{setCountry(e.target.value)}} type="text" placeholder="Enter your Country" name="email"  required></input>
@@ -142,9 +160,9 @@ const upddatPatient=()=>{
     <button  onClick={createNewPatient} className="registerbtn">Register</button>
     
    { updatesBool&& <div>
-    <button onClick={upddatPatient}  className="registerbtnupdate">Update</button>
-    <button   className="registerbtnbel">Delete</button>
-    <button   className="registerbtnshow">Show Your Information</button>
+    <button onClick={()=>{upddatPatient(updatId)}}  className="registerbtnupdate">Update</button>
+    <button onClick={deletPatient}  className="registerbtnbel">Delete</button>
+    {/* <button   className="registerbtnshow">Show Your Information</button> */}
     </div>
 }
   </div>

@@ -7,6 +7,6 @@ const  patientRouter=express.Router();
 
 
 patientRouter.post("/",register);
-patientRouter.delete("/",authentication,authorization("Create_Reservation"),deletePatientbyid)
-patientRouter.put("/",authentication,authorization("Create_Reservation"), updatePatientbyId)
+patientRouter.delete("/:id",deletePatientbyid)//authentication,authorization("Create_Reservation"),
+patientRouter.put("/:id",updatePatientbyId)//authentication,authorization("Create_Reservation"), 
 module.exports = patientRouter;

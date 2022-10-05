@@ -34,7 +34,7 @@ const register = (req, res) => {
       res.status(201).json({
         success: true,
         message: `Account Created Successfully`,
-        author: result,
+        patient: result,
       });
     })
     .catch((err) => {
@@ -53,20 +53,20 @@ const register = (req, res) => {
 };
 
 const deletePatientbyid=(req,res) => {
-const _id=req.token.userId
-const name=req.token.firstName
+const _id=req.params.id
+//const name=req.token.firstName
 patientModel
 .findByIdAndDelete(_id)
 .then((result) => {
   if (!result) {
     return res.status(404).json({
       success: false,
-      message: `The patient: ${name} is not found`,
+      message: `The patient: ${_id} is not found`,
     });
   }
   res.status(200).json({
     success: true,
-    message: `Patient ${name} deleted`,
+    message: `Patient  deleted`,
   });
 })
 .catch((err) => {
@@ -80,12 +80,18 @@ patientModel
 
 
 const updatePatientbyId=(req,res)=>{
+console.log("update")
 
 
-  const _id = req.token.userId;
-const name=req.token.firstName
+
+
+  const _id = req.params.id;
+  console.log(_id)
+  console.log(req.body.firstName)
+//const name=req.token.firstName
   patientModel
-    .findByIdAndUpdate(_id, req.body, { new: true })
+    .findByIdAndUpdate(_id, {firstName}=req.body
+       , { new: true })
     .then((result) => {
       if (!result) {
         return res.status(404).json({
@@ -95,7 +101,7 @@ const name=req.token.firstName
       }
       res.status(202).json({
         success: true,
-        message: `the ${name} updated`,
+        message: `the updated`,
         Patient: result,
       });
     })
