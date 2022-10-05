@@ -5,8 +5,15 @@ import React from "react";
 import "./style.css";
 
 import { useState, useEffect, useContext } from "react";
+import { authorContext } from "../../App";
 
 const ReqesterPatient=()=>{
+
+
+  const author=useContext(authorContext)
+    const token=author.token
+    const setToken=author.setToken
+
     const[message,setMesage]=useState("")
     const[firstName,setFirstName]=useState("")
 
@@ -19,7 +26,7 @@ const ReqesterPatient=()=>{
     const[password,setPassword]=useState("")
 
     const[phone,setPhone]=useState("")
-
+const[updatesBool,setUpdatesBool]=useState(false)
     const createNewPatient=(req,res)=>{
 axios.post(`http://localhost:5000/patients`,{
 
@@ -35,9 +42,11 @@ axios.post(`http://localhost:5000/patients`,{
 })
 .then((result) => {
     console.log(result);
-    //GettALLspic()
+    //GettALLspic()ccc
   // setSpecialt(result.data.specialt);
+  
   setMesage(result.data.message)
+ setUpdatesBool(true)
   })
   .catch((err) => {
     setMesage(err.response.data.message)
@@ -52,7 +61,39 @@ axios.post(`http://localhost:5000/patients`,{
 
 
 
+const upddatPatient=()=>{
+  axios.put(`http://localhost:5000/patients`,{
 
+
+    firstName,
+    lastName,
+    age,
+    country,
+    email,
+    password,
+    phone
+
+},{
+  headers:{
+    Authorization:`bearer ${token}`
+},
+
+})
+.then((result) => {
+    console.log(result);
+    //GettALLspic()ccc
+  // setSpecialt(result.data.specialt);
+  
+  setMesage(result.data.message)
+
+  })
+  .catch((err) => {
+    setMesage(err.response.data.message)
+  
+  });
+
+
+}
 
 
 
@@ -90,16 +131,24 @@ axios.post(`http://localhost:5000/patients`,{
     <input onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder="Enter your Email" name="email"  required></input>
 
 
-    <label for="psw"><b>Password</b></label>
+    <label ><b>Password</b></label>
     <input onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Enter Password" name="psw" id="psw" required></input>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <label ><b>Repeat Password</b></label>
     <input  type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required></input>
     <hr></hr>
     {/* <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> */}
 
-    <button  onClick={createNewPatient}  class="registerbtn">Register</button>
+    <button  onClick={createNewPatient} className="registerbtn">Register</button>
+    
+   { updatesBool&& <div>
+    <button onClick={upddatPatient}  className="registerbtnupdate">Update</button>
+    <button   className="registerbtnbel">Delete</button>
+    <button   className="registerbtnshow">Show Your Information</button>
+    </div>
+}
   </div>
+ 
   
   <div class="container signin">
     <p>{message}</p>

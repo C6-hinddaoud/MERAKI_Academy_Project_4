@@ -1,0 +1,42 @@
+.registerbtnupdate{
+    background-color: #0c035b;
+ 
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 32%;
+    opacity: 0.9;
+
+}
+.registerbtnupdate:hover{
+   
+
+}
+
+.registerbtnshow{
+    background-color: #f08e0e;
+ 
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 32%;
+    opacity: 0.9;
+
+}
+
+.registerbtnbel{
+    background-color: #e91919;
+ 
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 32%;
+    opacity: 0.9;
+
+}

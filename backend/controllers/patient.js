@@ -61,7 +61,7 @@ patientModel
   if (!result) {
     return res.status(404).json({
       success: false,
-      message: `The patient: ${_id} is not found`,
+      message: `The patient: ${name} is not found`,
     });
   }
   res.status(200).json({
