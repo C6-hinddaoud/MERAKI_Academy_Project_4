@@ -80,18 +80,67 @@ patientModel
 
 
 const updatePatientbyId=(req,res)=>{
-console.log("update")
+// console.log(patientModel.firstName)
+const updateObject = {
+  firstName: req.body.firstname === undefined ?  patientModel.firstName
+  : req.body.firstName,
+}
 
+// nullish coalescing operator
+let firstName = req.body.firstName ?? patientModel.firstName
+req.body.firstName ==undefined
+           ? (firstName = patientModel.firstName)
+           : (firstName = req.body.firstName),
+           req.body.lastName == undefined
+           
+             ? (lastName = patientModel.lastName)
+             : (lastName = req.body.lastName),
+             
+             req.body.age == undefined
+           
+             ? (age = patientModel.age)
+             : (age = req.body.age),
+              
+             req.body.email  == undefined
+           
+             ? (email  = patientModel.email  )
+             : (email   = req.body.email  ),
+             req.body.country == undefined
+           
+             ? (country  = patientModel.country )
+             : (country  = req.body.country ),
+        
+             req.body.password == undefined
+           
+             ? (password  = patientModel.password )
+             : (password  = req.body.password ),
+     
+             req.body.phone == undefined
+           
+             ? (phone = patientModel.phone )
+             : (phone  = req.body.phone )
+       
 
 
 
   const _id = req.params.id;
-  console.log(_id)
-  console.log(req.body.firstName)
+  // console.log(_id)
+  console.log(firstName)
 //const name=req.token.firstName
   patientModel
-    .findByIdAndUpdate(_id, {firstName}=req.body
-       , { new: true })
+    .findByIdAndUpdate(_id, {firstName,
+      lastName,
+      age,
+      country,
+      email,
+      password,
+     
+      
+      phone,
+      },
+        
+     
+        { new: true })
     .then((result) => {
       if (!result) {
         return res.status(404).json({

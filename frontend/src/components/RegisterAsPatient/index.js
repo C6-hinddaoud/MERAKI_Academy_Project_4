@@ -32,7 +32,7 @@ axios.post(`http://localhost:5000/patients`,{
 
 
     firstName,
-    lastName,
+   lastName,
     age,
     country,
     email,
@@ -69,7 +69,7 @@ const upddatPatient=(updatId)=>{
 
 
     firstName,
-   lastName,
+   //lastName,
     age,
     country,
     email,
@@ -133,7 +133,7 @@ const deletPatient=()=>{
     <input onChange={(e)=>{setLastName(e.target.value)}} type="text" placeholder="Enter Last Name" name="email"  required></input>
 
     <label ><b>Age</b></label>
-    <input onChange={(e)=>{setAge(e.target.valueAsNumber)}} type="text" placeholder="Enter Your Age" name="email"  required></input>
+    <input onChange={(e)=>{setAge(e.target.value)}} type="number" placeholder="Enter Your Age" name="email"  required></input>
 
     <label ><b>Country</b></label>
     <input onChange={(e)=>{setCountry(e.target.value)}} type="text" placeholder="Enter your Country" name="email"  required></input>
