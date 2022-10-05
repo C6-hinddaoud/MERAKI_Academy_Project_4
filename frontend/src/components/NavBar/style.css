@@ -1,0 +1,17 @@
+.mainNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.mNav{
+
+width: 20%;
+height: 5%;
+background-color:rgb(127 140 151);
+color: white;
+
+height: 30px;
+    padding-top: 8px
+}

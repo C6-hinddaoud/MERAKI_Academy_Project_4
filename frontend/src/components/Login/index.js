@@ -66,13 +66,13 @@ const myTimeout = setTimeout(5000);
 
 <div className="mainIntroDev">
       <div className="imgregester">
-        <img  className="" src="./assets/images/gallery-1.jpg" alt="pic"></img>
+        <img  className="" src="./assets/images/doctor-2027768__340.webp" alt="pic"></img>
       </div>
       <div className="container">
         <h1>Login</h1>
-        <p>Please fill in this form to create an account.</p>
+        <p>Please enter your correct email and password.</p>
         <hr></hr>
-        <label for="email">
+        <label >
           <b>Email</b>
         </label>
         <input

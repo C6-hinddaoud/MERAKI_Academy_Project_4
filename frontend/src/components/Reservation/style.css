@@ -1,4 +1,6 @@
-.container{}
+.containerr{
+    margin-top: 2%;
+}
 .divmain{
 display: flex;
 
@@ -43,4 +45,12 @@ text-align: center;
 }
 .spanres{
     color: red;
+}
+.reservationH1{
+
+    margin: 0%;
+     
+        /* background-color: rgba(255, 187, 0, 0.87); */
+        background-color: #04496c;
+    
 }

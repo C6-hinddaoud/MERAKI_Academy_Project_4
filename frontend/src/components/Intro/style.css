@@ -4,7 +4,7 @@ display: flex;
 
     color:#3fbbc0;;
 
-    background-image: url("./images/gallery-5.jpg");
+    background-image: url("./images/doc3.jpg");
     background-size: 100% 100%;
     height: 500px;
     justify-items: center;
@@ -14,15 +14,33 @@ display: flex;
     
     
 }
+.intowelcome{
 
+  background-color: #3fbbc0;
+  color: white;
+}
+
+.mainIntro{
+  background-color: #3fbbc0;
+  padding: 0%;
+  margin: 0%;
+}
+
+div.divIntro {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid rgba(57, 176, 194,0.5);
+  opacity: 0.6;
+  height: 23%;
+}
 .divIntro {
 border: #3fbbc0 1px solid;
-width: 200px;
-height: 170px;
+width: 50%;
+height: 30%;
 /* gap: 50px; */
 background-color: white;
 border-radius: 5px;
-
+margin: 20%;
 
 
 }

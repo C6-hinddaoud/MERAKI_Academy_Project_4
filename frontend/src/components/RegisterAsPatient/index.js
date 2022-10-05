@@ -6,7 +6,8 @@ import "./style.css";
 
 import { useState, useEffect, useContext } from "react";
 import { authorContext } from "../../App";
-
+import 'reactjs-popup/dist/index.css';
+import Popup from "reactjs-popup";
 const ReqesterPatient=()=>{
 
 
@@ -167,7 +168,9 @@ const deletPatient=()=>{
 }
   </div>
  
-  
+  {/* <Popup trigger={<button> Trigger</button>} position="right center">
+    <div><p>{message}</p></div>
+  </Popup> */}
   <div class="container signin">
     <p>{message}</p>
   </div>

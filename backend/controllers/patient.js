@@ -150,7 +150,7 @@ req.body.firstName ==undefined
       }
       res.status(202).json({
         success: true,
-        message: `the updated`,
+        message: `The update process was successful`,
         Patient: result,
       });
     })

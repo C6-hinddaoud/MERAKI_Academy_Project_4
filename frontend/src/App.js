@@ -9,6 +9,7 @@ import Category from "./components/DoctorCategories";
 import NewReservation from "./components/Reservation";
 import PatientInfo from "./components/PatientInfo";
 import Specialty from "./components/AddReservation";
+import Navbar from "./components/NavBar";
 
  export const authorContext=createContext()
 
@@ -27,8 +28,9 @@ function App() {
 
     
     <div className="App">
-     
+     <div> <Navbar/></div>
       <Routes>
+      <Route path="/" element={<Intro />}></Route>
    <Route path="/login" element={<Login/>}></Route>
       <Route path="/Intro" element={<Intro />} />
       <Route path="/Register" element={<Register/>}></Route>
