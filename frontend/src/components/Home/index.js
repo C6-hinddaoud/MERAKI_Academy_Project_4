@@ -37,7 +37,7 @@ return(
           <div class="container">
             <h2>Sequi ea ut et est quaerat</h2>
             <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
-            <img className="home1" src="./assets/images/home1.png"></img>
+            <img className="home1" src="./assets/images/p4.png"></img>
           </div>
         </div>
 

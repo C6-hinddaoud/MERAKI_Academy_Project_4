@@ -50,8 +50,8 @@ function App() {
       Contact
 </Routes>
 <div className="foter"> <div class="copyright">
-        © Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
-      </div></div>
+        <strong><span>Medicio</span></strong>
+      </div>{Date().toString()}</div>
     </div>
     </authorContext.Provider>
   )
