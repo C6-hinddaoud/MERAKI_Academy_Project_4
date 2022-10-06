@@ -10,3 +10,6 @@
 .carousel-item active{
     background-image: url("./images/slide-3.jpg")
 }
+.home1{
+    width: 100%;
+}
