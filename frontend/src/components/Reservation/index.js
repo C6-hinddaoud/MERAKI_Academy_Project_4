@@ -233,7 +233,7 @@ useEffect(()=>{
 return(
  
     <div className="divmain">
-<div className="text-center">
+<div className="text-center calenderContener">
 <div className="calendar-container">
         <Calendar   onChange={setvalue} value={valueoo}/>
         {/* onChange={setDate} value={date} */}
@@ -250,7 +250,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
       </div>
 </div>
 
-<div className="container containercalender" >
+<div className="container containercalender containerrss" >
  <h1>Reservation</h1>
     <p>Please fill in this form to create an Reservation.</p>
     <hr></hr>
@@ -279,7 +279,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
         {/* {setDate(valueoo.toDateString())} */}
 {/* //date.toDateString() */}
 
-    <div style={{ margin: "60px" }}>
+    <div className="divdatecalender" style={{ margin: "60px" }}>
           <label>
             <b>Docrors</b>
           </label>
@@ -315,7 +315,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
 </div>
 
     
-<div style={{ margin: "60px" }}>
+<div className="divdatecalender" >
           <label>
             <b>Time</b>
           </label>

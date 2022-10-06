@@ -1,5 +1,6 @@
-.containerrr{
-    margin-top: 2%;
+.containerrss{
+    margin-top: 0%;
+    width: 50%;
 }
 .divmain{
 display: flex;
@@ -22,6 +23,17 @@ flex-wrap: wrap;
     opacity: 0.9;
     text-align: center;
     
+}
+.calenderContener{
+    width: 45%;
+}
+.react-calendar{
+
+    width: 100% !important;
+}
+
+.react-calendar__viewContainer{
+    width: 100%;
 }
 
 #deleteResevation{
