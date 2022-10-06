@@ -1,0 +1,12 @@
+.carousel-item{
+
+    background-image: url("./images/slide-1.jpg")
+
+}
+.carousel-item{
+    background-image: url("./images/slide-2.jpg")
+}
+
+.carousel-item active{
+    background-image: url("./images/slide-3.jpg")
+}
