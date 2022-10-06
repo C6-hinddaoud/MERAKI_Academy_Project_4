@@ -3,7 +3,8 @@
 }
 .divmain{
 display: flex;
-
+margin-top: 5%;
+flex-wrap: wrap;
 }
 .react-calendar{
 /* height: 500px; */

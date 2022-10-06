@@ -75,7 +75,7 @@ return(
                     navgate("/reservation")
                     setSpecId(elem._id)
                    // console.log("mkm",specId)
-                  }}  className="registerbtn ">reservation</button>
+                  }}  className="registerbtnadd ">reservation</button>
                   </div>
               );
             })}

@@ -10,6 +10,7 @@ import NewReservation from "./components/Reservation";
 import PatientInfo from "./components/PatientInfo";
 import Specialty from "./components/AddReservation";
 import Navbar from "./components/NavBar";
+import About from "./components/AboutUs";
 
  export const authorContext=createContext()
 
@@ -39,6 +40,8 @@ function App() {
       <Route path="/reservation" element={<NewReservation/>}></Route>
       <Route path="/patient"   element={<PatientInfo/>}></Route>
       <Route path="/Specialty"   element={<Specialty/>}></Route>
+      
+      <Route path="/About"   element={<About/>}></Route>
 </Routes>
     </div>
     </authorContext.Provider>

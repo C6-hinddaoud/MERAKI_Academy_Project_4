@@ -1,0 +1,31 @@
+.img-fluid{
+width: 50%;
+height: 50%;
+margin: 5%;
+
+}
+.aboutimg{
+
+    width: 20%;
+    height: 20%;
+  padding: 0;
+  
+
+}
+.lim{
+text-align: left;
+margin: 3%;
+padding: 5%;
+
+}
+.about{
+
+    margin: 5%;
+    background-color: aquamarine;
+}
+.cta {
+    background: #3fbbc0;
+    color: white;
+    background-size: cover;
+    /* padding: 60px 0; */
+}

@@ -32,6 +32,7 @@ div.divIntro {
   border: 1px solid rgba(57, 176, 194,0.5);
   opacity: 0.6;
   height: 23%;
+  cursor: pointer;
 }
 .divIntro {
 border: #3fbbc0 1px solid;

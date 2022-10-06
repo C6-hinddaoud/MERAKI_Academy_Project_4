@@ -5,7 +5,7 @@
     color: black ;
     background: white !important;
     display: grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
 }
 .divSpicItem{
 margin: 10px;
@@ -37,15 +37,16 @@ height: 100%;
   }
   .reservationH1{
     /* background-color: rgba(255, 187, 0, 0.87) ; */
-    background-color:#636334
+    background-color:#636334;
+    margin: 4% !important
   }
   
   /* Add padding to containers */
   .containerr {
-    border: 2px #04aa6d solid;
+    border: 2px #3fbbc0 solid;
     gap: 2px;
     border-radius: 36px;
-    padding: 16px;
+    /* padding: 16px; */
     background-color: white;
     width: 80%;
     gap: 1%;
@@ -83,8 +84,8 @@ height: 100%;
   }
   
   /* Set a style for the submit button */
-  .registerbtn {
-    background-color: #04AA6D;
+  .registerbtnadd {
+    background-color:#3fbbc0;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -92,6 +93,9 @@ height: 100%;
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+border-bottom-left-radius: 36px;
+border-bottom-right-radius:36px ;
+
   }
   .registerbtn:hover {
 color: #E3E36A;

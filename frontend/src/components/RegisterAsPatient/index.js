@@ -120,8 +120,8 @@ const deletPatient=()=>{
 
 
     return(
-        <div className="Mainreq">
-
+        <div className="mainIntroDev">
+<div className="imgregester"><img className="imgReg" src="./assets/images/docc1.png"></img></div>
 <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
