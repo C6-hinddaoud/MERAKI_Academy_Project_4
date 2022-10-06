@@ -1,13 +1,15 @@
-body {
+/* body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-  }
+  } */
    
  .mainIntroDev{
     display: flex;
-
+/* overflow: hidden;
+height: 90vh;
+width: 100vw; */
  }
- .imgregester{
+ /* .imgregester{
 width: 300px;
 height: 100%;
 
@@ -16,7 +18,7 @@ height: 100%;
     width: 300px;
     height: 1100px;
 
- }
+ } */
   * {
     box-sizing: border-box;
   }
@@ -24,37 +26,40 @@ height: 100%;
   /* Add padding to containers */
   .container {
     
-    padding: 16px;
+    /* padding: 16px; */
     background-color: white;
   }
   
   /* Full-width input fields */
-  input[type=text], input[type=password] ,input[type=number]{
+  /* input[type=text], input[type=password] ,input[type=number]{
     width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+    height: 1vh;
+    padding: 10px;
+    margin: 1px 0 1px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
-  }
-  
+  } */
+/*   
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
+    height: 1vh;
     outline: none;
-  }
+  } */
   
   /* Overwrite default styles of hr */
   hr {
     border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
   }
   
   /* Set a style for the submit button */
   .registerbtn {
+    
     background-color: #04AA6D;
     color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
+    padding: 8px 10px;
+    /* margin: 2px 0; */
     border: none;
     cursor: pointer;
     width: 100%;
