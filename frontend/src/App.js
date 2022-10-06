@@ -11,6 +11,8 @@ import PatientInfo from "./components/PatientInfo";
 import Specialty from "./components/AddReservation";
 import Navbar from "./components/NavBar";
 import About from "./components/AboutUs";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
 
  export const authorContext=createContext()
 
@@ -42,7 +44,14 @@ function App() {
       <Route path="/Specialty"   element={<Specialty/>}></Route>
       
       <Route path="/About"   element={<About/>}></Route>
+      <Route path="/Contact"   element={<Contact/>}></Route>
+      <Route path="/Home"   element={<Home/>}></Route>
+
+      Contact
 </Routes>
+<div className="foter"> <div class="copyright">
+        © Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+      </div></div>
     </div>
     </authorContext.Provider>
   )

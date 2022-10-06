@@ -3,6 +3,7 @@ import React from "react";
 import { useState,useContext,useEffect } from "react";
 import { authorContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import "./styless.css"
 const Login = () => {
 
 const navgate=new useNavigate()
@@ -64,7 +65,7 @@ const myTimeout = setTimeout(5000);
   return <div>
 
 
-<div className="mainIntroDev">
+<div className="mainIntroDev devlog">
       <div className="imgregester">
         <img  className="" src="./assets/images/doctor-2027768__340.webp" alt="pic"></img>
       </div>
