@@ -103,7 +103,7 @@ return(
     {selectedImage && (
       <div>
       {/* <img alt="not fount" width={"20%"} src={`./assets/images/${selectedImage}`  }></img> */}
-      <img alt="not fount" width={"80%"} height={"1%"} src={URL.createObjectURL(selectedImage)} />
+      <img className="spicImg" alt="not fount"  src={URL.createObjectURL(selectedImage)} />
       <br />
       <button className="registerbtnmove" onClick={()=>setSelectedImage(null)}>Remove</button>
       </div>

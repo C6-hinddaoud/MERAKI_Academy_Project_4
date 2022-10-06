@@ -61,7 +61,7 @@ return(
                 >
                  <h3> {elem.specialty}</h3>
                   <br></br>
-                  <hr></hr>
+                  <hr className="hrspicality"></hr>
                   <br></br>
                   <div>
                   <p className="pw">{elem.description}</p>
