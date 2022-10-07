@@ -25,9 +25,8 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
-
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
+No waiting anymore, this is the most beautiful sentence you can hear in your life, and it is now available on our website, Al-Shifa Hospital. You can book your appointments remotely and you do not need to waste your time anymore.
+In addition to the above, you can learn about the list of specialties in the hospital and the doctors affiliated with each department and then book, do not wait, how beautiful it is to hear it in all aspects of life. We will work together to make it in all aspects of life, not the medical sector.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -35,10 +34,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Visual Studio Code follow this <a href=''>link</a> to install.
-- Git Bash follow this <a href=''>link</a> to install.
-- MongoDB follow this <a href=''>link</a> to install.
-- Node.js follow this <a href=''>link</a> to install.
+- Visual Studio Code follow this <a href='https://code.visualstudio.com/download'>link</a> to install.
+- Git Bash follow this <a href='https://git-scm.com/downloads'>link</a> to install.
+- MongoDB follow this <a href='https://medium.com/@LondonAppBrewery/how-to-download-install-mongodb-on-windows-4ee4b3493514'>link</a> to install.
+- Node.js follow this <a href='https://nodejs.org/en/download/'>link</a> to install.
+
+- postman follow this<a href="https://www.postman.com/downloads/"> link</a>
 
 ### Installing:
 
