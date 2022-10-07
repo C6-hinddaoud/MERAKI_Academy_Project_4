@@ -66,40 +66,182 @@ Step 8 − App.
     "mongoose": "^6.6.1",from node.js using git bash
 ### Installing:
 
-1. Clone the repo to your local machine using git bash.
+<!-- 1. Clone the repo to your local machine using git bash.
 
 ```
-git clone https://github.com/your_username_/Project-Name.git
-```
+git clone https://github.com/C6-hinddaoud/MERAKI_Academy_Project_4
 
 2. Install packeges repeat this step in backend and frontend folder
 
 ```
 npm i
 ```
+ 
 
 3. Run server using git bash inside backend folder
 
 ```
 npm run dev
 ```
+5.install
 
-4. Run application using git bash inside frontend folder
+    "bcrypt",
+    "cors",
+    "exress"
+    "dotenv",
+    "express",
+    "jsonwebtoken",
+    "mongoose" 
+    from node.js using git bash
 
+
+
+
+
+
+
+6. Run application using git bash inside frontend folder
+
+
+
+7.install
+ axios ,calender,install ,
+"react",
+    "react-calendar",
+    "react-dom",
+    "react-router-dom",
+    "react-scripts",
+    "reactjs-popup" from node.js using git bash
 ```
 npm run start
 ```
 
-Now app ready to use
+Now app ready to use -->
 
 ## 🎈 Usage <a name="usage"></a>
+introductin page for main categories
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174469/introduction_izvnyv.png" alt="Project logo"></a>
+</p>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+inter to home bage from here
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174426/homeicon_szhf8g.png" alt="Project logo"></a>
+</p>
 
-Ex.
-- You don't have to register to navigate our web app
-- You can click on the **Home** tab provided in the navigation bar to view the home section
-- You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
+This is Home Page With intoduction 
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174439/homepage_lkfjqm.png" alt="Project logo"></a>
+</p>
+
+
+Inter the About Bage From Here 
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174341/abouicon_hxdy0c.png" alt="Project logo"></a>
+</p>
+
+This Description about page
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174376/aboutbage_djaaix.png" alt="Project logo"></a>
+</p>
+
+Inter ToCosmatic page From Here
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174446/cosmaticicon_vimakn.png" alt="Project logo"></a>
+</p>
+
+
+use this page to Ads
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174419/cosmaticpage_cychrs.png" alt="Project logo"></a>
+</p>
+
+
+
+Inter to regestration As patient
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174531/regicon_lg5udv.png" alt="Project logo"></a>
+</p>
+
+
+the patien inter its information to make her on acount
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174518/regester_as_patientpage_d4uqso.png" alt="Project logo"></a>
+</p>
+
+
+Inter to login
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174501/loginicon_oscf4q.png" alt="Project logo"></a>
+</p>
+
+
+
+the doctor or patient must inter there true infotmation to login 
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174492/loginbage_tvplrb.png" alt="Project logo"></a>
+</p>
+
+
+If Patient login the prowser face thim to this page to choice doctor Specality
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174572/Spicaltypage_lordeo.png" alt="Project logo"></a>
+</p>
+
+When the patient choice the spicality the proser face them to reservation page and can choice doctor ,time ,and date.
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174553/reservationpage_mbilg7.png" alt="Project logo"></a>
+</p>
+
+if the doctor log in the brwoser face them to the patint in oner doctor and can search about any patient he want reseved in this doctor
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174561/searchPantient_ibr1hq.png" alt="Project logo"></a>
+</p>
+
+if we choice patient info from prev page the doctor can see the patient information and add the medicine
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174510/midicalpage_dlrqen.png" alt="Project logo"></a>
+</p>
+
+can the doctor choice add specality to add new specality
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174397/addnewSpecality_jvjzmq.png" alt="Project logo"></a>
+</p>
+
+can the doctor add new doctor and regester new doctor
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174389/addnewdoctor_f5az2r.png" alt="Project logo"></a>
+</p>
+
+
+
+
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
