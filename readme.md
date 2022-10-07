@@ -41,6 +41,29 @@ These instructions will get you a copy of the project up and running on your loc
 
 - postman follow this<a href="https://www.postman.com/downloads/"> link</a>
 
+-Installing ReactJS using webpack and babel
+Step 1 - Create the Root Folder. ...
+Step 2 - install React and react dom. ...
+Step 3 - Install webpack. ...
+Step 4 - Install babel. ...
+Step 5 - Create the Files. ...
+Step 6 - Set Compiler, Server and Loaders. ...
+Step 7 - index. ...
+Step 8 − App.
+- install axios ,calender,install ,
+"react": "^18.2.0",
+    "react-calendar": "^3.9.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "reactjs-popup": "^2.,
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "exress"
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.1",from node.js using git bash
 ### Installing:
 
 1. Clone the repo to your local machine using git bash.
