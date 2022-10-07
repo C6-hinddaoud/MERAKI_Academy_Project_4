@@ -252,10 +252,10 @@ return(<div className="patintDev">
           })}</b>
           {/* {setMedicine(onElem?.prescription)} */}
         </label>
-        <input onChange={(e)=>{setmedo(e.target.value)}} className="perInpur" type="text"></input>
-        <button onClick={addMidicen}>AddToLIST</button>
-        <button> Delete</button>
-        <button>UPdate </button>
+        <input placeholder="Enter the patient's medication"  onChange={(e)=>{setmedo(e.target.value)}} className="perInpur" type="text"></input>
+        <button className="btnMidicen" onClick={addMidicen}>AddToLIST</button>
+        {/* <button> Delete</button>
+        <button>UPdate </button> */}
     </div>
    
     

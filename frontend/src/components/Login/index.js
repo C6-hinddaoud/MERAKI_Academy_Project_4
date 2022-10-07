@@ -66,7 +66,7 @@ const myTimeout = setTimeout(5000);
 
 
 <div className="mainIntroDev devlog">
-      <div className="imgregester">
+      <div className="imgregester loginimg">
         <img  className="" src="./assets/images/doctor-2027768__340.webp" alt="pic"></img>
       </div>
       <div className="container">

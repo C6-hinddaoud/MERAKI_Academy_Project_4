@@ -27,7 +27,11 @@
     opacity: 0.9;
 
 }
+.Csmessge{
 
+    color:black;
+    background-color: aquamarine;
+}
 .registerbtnbel{
     background-color: #e91919;
  
@@ -43,4 +47,12 @@
 .Mainreq{
     display: flex; 
     flex-wrap: wrap;
+}
+
+.dispaufourinput{
+
+    display: grid ;
+    flex-wrap: wrap ;
+    grid-template-columns:1fr 1fr ;
+    gap: 5%;
 }

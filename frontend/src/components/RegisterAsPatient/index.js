@@ -3,14 +3,14 @@ import axios from "axios"
 
 import React from "react";
 import "./style.css";
-
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { authorContext } from "../../App";
 import 'reactjs-popup/dist/index.css';
 import Popup from "reactjs-popup";
 const ReqesterPatient=()=>{
 
-
+const navgate=new useNavigate()
   const author=useContext(authorContext)
     const token=author.token
     const setToken=author.setToken
@@ -126,35 +126,43 @@ const deletPatient=()=>{
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr></hr>
-
+<div  className="dispaufourinput">
+  <div>
     <label ><b>First Name</b></label>
     <input onChange={(e)=>{setFirstName(e.target.value)}} type="text" placeholder="Enter First Name" name="firstName"  required></input>
-
+    </div>
+    <div>
     <label ><b>Last Name</b></label>
     <input onChange={(e)=>{setLastName(e.target.value)}} type="text" placeholder="Enter Last Name" name="email"  required></input>
-
+    </div>
+    <div>
     <label ><b>Age</b></label>
     <input onChange={(e)=>{setAge(e.target.value)}} type="number" placeholder="Enter Your Age" name="email"  required></input>
-
+    </div>
+    <div>
     <label ><b>Country</b></label>
+    
     <input onChange={(e)=>{setCountry(e.target.value)}} type="text" placeholder="Enter your Country" name="email"  required></input>
+    </div>
 
-
-   
-
+    
+    <div>
     <label ><b>Your Number Phone</b></label>
     <input onChange={(e)=>{setPhone(e.target.value)}} type="text" placeholder="Enter your Phone" name="email"  required></input>
-
-
+    </div>
+    <div>
     <label ><b>Email</b></label>
     <input onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder="Enter your Email" name="email"  required></input>
+    </div>
 
-
+    <div>
     <label ><b>Password</b></label>
     <input onChange={(e)=>{setPassword(e.target.value)}} type="password" placeholder="Enter Password" name="psw" id="psw" required></input>
-
-    <label ><b>Repeat Password</b></label>
-    <input  type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required></input>
+    </div>
+    
+    </div>
+    {/* <label ><b>Repeat Password</b></label>
+    <input  type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required></input> */}
     <hr></hr>
     {/* <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> */}
 
@@ -163,18 +171,20 @@ const deletPatient=()=>{
    { updatesBool&& <div>
     <button onClick={()=>{upddatPatient(updatId)}}  className="registerbtnupdate">Update</button>
     <button onClick={deletPatient}  className="registerbtnbel">Delete</button>
-    {/* <button   className="registerbtnshow">Show Your Information</button> */}
+    <button onClick={()=>{navgate("/Login")}}  className="registerbtnshow">Go TO Login</button>
     </div>
 }
+<div class="container signin Csmessge">
+    <p>{message}</p>
+  </div>
+
+
   </div>
  
   {/* <Popup trigger={<button> Trigger</button>} position="right center">
     <div><p>{message}</p></div>
   </Popup> */}
-  <div class="container signin">
-    <p>{message}</p>
-  </div>
-
+  
 
 
         </div>
