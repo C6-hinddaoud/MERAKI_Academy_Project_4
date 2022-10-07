@@ -6,8 +6,12 @@ color: white;
 background-color: rgb(102, 133, 146);
 position: fixed;
 /* top: 100%; */
-bottom: 0px;
+bottom: 2px;
 left: 0px;
 right: 0px;
 
+}
+
+.container {
+  margin-top: 1%;
 }

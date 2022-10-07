@@ -22,7 +22,7 @@ const Register = () => {
         // console.log(result.data.specialt
         //   )
         setSpecialt(result.data.specialt);
-        setMesage(result.data.message);
+        // setMesage(result.data.message);
       })
       .catch((err) => {
         throw err;
@@ -61,7 +61,7 @@ const Register = () => {
   return (
     <div className="mainIntroDev">
       <div className="imgregester">
-        <img  className="imgReg" src="./assets/images/doctors-1.jpg" alt="pic"></img>
+        <img  className="imgReg" src="./assets/images/doc4.jpg" alt="pic"></img>
       </div>
       <div className="container">
         <h1>Register</h1>
@@ -107,16 +107,16 @@ const Register = () => {
           required
         ></input>
         {/*  */}
-        <div style={{ margin: "60px" }}>
+        <div className="spicalitydivnew" style={{ margin: "10px" }}>
           <label>
             <b>specialty</b>
           </label>
-          <input
+          {/* <input
             value={ddlName}
             type="text"
             placeholder="specialty"
             required
-          ></input>
+          ></input> */}
 
           <select
             onChange={(e) => {
@@ -165,7 +165,7 @@ const Register = () => {
           required
         ></input>
 
-        <label >
+        {/* <label >
           <b>Repeat Password</b>
         </label>
         <input
@@ -174,11 +174,11 @@ const Register = () => {
           name="psw-repeat"
           id="psw-repeat"
           required
-        ></input>
+        ></input> */}
         <hr></hr>
         <p>{message}</p>
 
-        <button onClick={addDoctor} className="registerbtn">
+        <button onClick={addDoctor} className="registerbtnnew">
           Register
         </button>
       </div>

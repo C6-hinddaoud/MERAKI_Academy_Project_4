@@ -239,6 +239,7 @@ return(
         {/* onChange={setDate} value={date} */}
       </div>
       <div className="text-center">
+      Appointments already booked
        {
     resevationDoctor.length>0&&   resevationDoctor.map((elem,i)=>{
 return (<p> <span className="spanres">time:</span>{ elem.time } <span className="spanres" >date:</span>  {elem.date} 
@@ -279,7 +280,7 @@ return (<p> <span className="spanres">time:</span>{ elem.time } <span className=
         {/* {setDate(valueoo.toDateString())} */}
 {/* //date.toDateString() */}
 
-    <div className="divdatecalender" style={{ margin: "60px" }}>
+    <div className="divdatecalender" style={{ margin: "30px" }}>
           <label>
             <b>Docrors</b>
           </label>

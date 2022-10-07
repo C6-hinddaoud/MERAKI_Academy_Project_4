@@ -84,7 +84,7 @@ header {
         align-content: center;
         align-items: center;
  background-color: #e5e5e5;
- margin-top: 21px;
+ margin-top: 46px;
     }
     .NAV{
         width: 25%;
@@ -94,7 +94,7 @@ header {
         align-items: center;
         /* height: 21PX; */
         font-size: 50%;
-        font-size: 72%;
+        font-size: 120%;
         font-family: bold;
         color: white;
         background-color: #377976;

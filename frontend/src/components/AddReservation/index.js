@@ -2,12 +2,13 @@ import axios from "axios";
 import { base64encode } from "nodejs-base64";
 import { useContext, useState } from "react";
 import { authorContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 // import { Buffer} from Buffer
 import"./style.css"
 
 const Specialty=()=>{
 
-
+const navgate=new useNavigate()
 
   const author=useContext(authorContext)
   const token=author.token
@@ -18,7 +19,7 @@ const[description,setDescription]=useState("")
 const [selectedImage, setSelectedImage] = useState(null);
 const[specialty,setSpecialty]=useState("")
 const [image, setImage] = useState(null);
-
+const[tryms,setTryms]=useState(false)
 
 const convertBase64 = (file) => {
   return new Promise((resolve, reject) => {
@@ -47,6 +48,7 @@ console.log("KI",)
     })
   .then((result)=>{
     console.log(result)
+    setTryms(true)
     setMesage(result.data.message);
   })
   .catch((err)=>{
@@ -76,7 +78,8 @@ return(
     <label>
           <b>Medical Department</b>
         </label>
-        <input
+        <br></br>
+        <input className="spicalityinput"
           onChange={(e) => {
             setSpecialty(e.target.value);
           }}
@@ -85,10 +88,12 @@ return(
           
           required
         ></input>
+        <br></br>
 
 <label>
           <b>Medical Department Description</b>
         </label>
+        <br></br>
         <textarea className="Description"  rows={5}
          
 
@@ -135,7 +140,9 @@ return(
       }}
     />
 
-<button className="registerbtn" onClick={Addspecialty}>Add New Specialty</button>
+<button className="registerbtnspicality" onClick={Addspecialty}>Add New Specialty</button>
+<button className="backbouton"  onClick={()=>{navgate(-1)}}>Go Back</button>
+{tryms&&<p className="backmsg">{message}</p>}
   </div>
 
         

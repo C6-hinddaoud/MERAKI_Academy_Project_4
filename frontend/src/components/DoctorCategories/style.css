@@ -6,6 +6,8 @@
     background: white !important;
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
+    flex-wrap: wrap;
+    
 }
 .divSpicItem{
 margin: 10px;
@@ -27,11 +29,11 @@ body {
 height: 100%;
 
  }
- .imgReg{
+ /* .imgReg{
     width: 300px;
     height: 1100px;
 
- }
+ } */
   * {
     box-sizing: border-box;
   }
@@ -45,10 +47,11 @@ height: 100%;
   .containerr {
     border: 2px #3fbbc0 solid;
     gap: 2px;
-    border-radius: 36px;
+    border-radius: 40px;
     /* padding: 16px; */
     background-color: white;
     width: 80%;
+    margin-bottom: 2%;
     gap: 1%;
   }
   .imgCatiegory{
@@ -91,6 +94,7 @@ height: 100%;
     color: white;
     padding: 16px 20px;
     /* margin: 8px 0; */
+    font-size: 100%;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -98,6 +102,12 @@ height: 100%;
 border-bottom-left-radius: 36px;
 border-bottom-right-radius:36px ;
 
+  }
+  .registerbtnadd:hover{
+
+    color: #E3E36A;
+    opacity: 0.7;
+/* font-size: large; */
   }
   .registerbtn:hover {
 color: #E3E36A;

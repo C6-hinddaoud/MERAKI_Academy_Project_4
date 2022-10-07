@@ -22,7 +22,8 @@ const navgate=new useNavigate()
 <div onClick={()=>{navgate("/Home")}} className="mNav logh"><img src="./assets/images/l4 (1).jpg" ></img></div>
 <div className="mNav" onClick={()=>{navgate("/About")}}>About </div>
 <div className="mNav"onClick={()=>{navgate("/Contact")}}>Contact</div>
-<div className="mNav"onClick={()=>{navgate("/About")}}>a</div>
+<div className="mNav"onClick={()=>{navgate("/GetApi")}}>Cosmetics </div>
+<div className="mNav"onClick={()=>{navgate("/intro")}}>Introduction</div>
 <div className="mNav log"><img src="./assets/images/l2.png" onClick={logout}></img></div>
 
         </div>
