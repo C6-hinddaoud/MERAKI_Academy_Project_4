@@ -9,7 +9,7 @@
 
 <p align="center">An application that helps organize the work of hospitals and save time and effort for the patient
     <br> 
-<a href=''>Demo</a>
+<a href='http://localhost:3000/intro'>Demo</a>
     <br> 
 </p>
 
@@ -117,6 +117,12 @@ npm run start
 ```
 
 Now app ready to use -->
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://res.cloudinary.com/ddsrkj1dx/image/upload/v1665174469/introduction_izvnyv.png" alt="Project logo"></a>
+</p>
+
 
 ## 🎈 Usage <a name="usage"></a>
 introductin page for main categories

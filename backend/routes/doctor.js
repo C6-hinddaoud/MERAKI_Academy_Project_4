@@ -1,5 +1,5 @@
 const express = require("express");
-const { createNewDoctor, getallDoctobySpecialty, getAllPatientInTheSameDoctor, gitpatientpyName, getDoctorInformationALLdocr } = require("../controllers/doctor");
+const { createNewDoctor, getallDoctobySpecialty, getAllPatientInTheSameDoctor, gitpatientpyName, getDoctorInformationALLdocr, deletDoctorById, updateDoctorByID } = require("../controllers/doctor");
 const authentication = require("../middleware/authentication");
 const authorization = require("../middleware/authorization");
 
@@ -15,5 +15,6 @@ doctorRouter.get("/search_2",authentication,gitpatientpyName)
 
 doctorRouter.get("/allDoctors",getDoctorInformationALLdocr)
 // doctorRouter
-
+doctorRouter.delete("/delete/:id",deletDoctorById)
+doctorRouter.put("/update/:id",updateDoctorByID)
 module.exports = doctorRouter;

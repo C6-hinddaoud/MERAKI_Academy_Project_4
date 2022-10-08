@@ -138,13 +138,13 @@ doctorModel.find({})
   if(!result){
     res.status(500).json({
       success: false,
-      message: `There Are no Patient in Dr:${name}`,
+      message: `There Are no Doctors`,
       patient: result,
     });
   }else{
   res.status(201).json({
     success: true,
-    message: `This is info about  :${firstName}`,
+    message: `This is info about  all Doctors`,
     patient: result,
   });
 }
@@ -159,4 +159,115 @@ doctorModel.find({})
 })
 }
 
-module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor,gitpatientpyName,getDoctorInformationALLdocr};
+
+
+const deletDoctorById=(req,res)=>{
+
+  const _id=req.params.id
+  //const name=req.token.firstName
+  doctorModel
+  .findByIdAndDelete(_id)
+  .then((result) => {
+    if (!result) {
+      return res.status(404).json({
+        success: false,
+        message: `The Doctor: ${_id} is not found`,
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: `Doctor  deleted`,
+    });
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      err: err.message,
+    });
+  });
+
+
+}
+
+
+
+
+ 
+ 
+ 
+
+ 
+const updateDoctorByID=(  req,res)=>{
+  console.log("tesr")
+  req.body.name ==undefined
+             ? (name = doctorModel.name)
+             : (name = req.body.name),
+             req.body.salary == undefined
+             
+               ? (salary =doctorModel.salary)
+               : (salary= req.body.salary),
+               
+              
+               req.body.email  == undefined
+             
+               ? (email  = doctorModel.email  )
+               : (email   = req.body.email  ),
+               req.body.specialty == undefined
+             
+               ? (specialty  = doctorModel.specialty )
+               : (specialty  = req.body.specialty ),
+          
+               req.body.password == undefined
+             
+               ? (password  = doctorModel.password )
+               : (password  = req.body.password ),
+       
+               req.body.Qualification == undefined
+             
+               ? (Qualification = doctorModel.Qualification )
+               : (Qualification = req.body.Qualification )
+         
+  
+  
+  
+    const _id = req.params.id;
+    // console.log(_id)
+   
+  //const name=req.token.firstName
+  doctorModel
+      .findByIdAndUpdate(_id, { name,
+        salary,
+       
+         email,
+         password,
+         Qualification,
+         specialty
+        },
+          
+       
+          { new: true })
+      .then((result) => {
+        if (!result) {
+          return res.status(404).json({
+            success: false,
+            message: `The Doctor: ${_id} is not found`,
+          });
+        }
+        res.status(202).json({
+          success: true,
+          message: `The update process was successful`,
+          Patient: result,
+        });
+      })
+      .catch((err) => {
+        res.status(500).json({
+          success: false,
+          message: `Server Error`,
+          err: err.message,
+        });
+      })
+  
+}
+
+module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor,gitpatientpyName,getDoctorInformationALLdocr,deletDoctorById,updateDoctorByID};
