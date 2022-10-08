@@ -81,6 +81,21 @@ height: 100%;
     background-color: #ddd;
     outline: none;
   }
+
+  .paging{
+margin-bottom: 5%;
+background-color:#3fbbc0;
+color: white;
+padding: 16px 20px;
+/* margin: 8px 0; */
+font-size: 100%;
+border: none;
+cursor: pointer;
+width: 10%;
+/* opacity: 0.9; */
+border-top-left-radius: 36px;
+border-bottom-right-radius:36px ;
+  }
   
   /* Overwrite default styles of hr */
   hr {
@@ -98,7 +113,7 @@ height: 100%;
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    /* opacity: 0.9; */
 border-bottom-left-radius: 36px;
 border-bottom-right-radius:36px ;
 

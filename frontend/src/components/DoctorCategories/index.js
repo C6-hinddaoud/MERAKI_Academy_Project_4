@@ -13,14 +13,16 @@ const token=author.token
 const setToken=author.setToken
 const specId=author.specId
 const setSpecId=author.setSpecId
-
-
+const[page,setpage]=useState(3)
+const[p,setp]=useState(1)
 const navgate= new useNavigate()
     const [specialt, setSpecialt] = useState([]);
     const [message, setMesage] = useState("");
     const GettAllSpic= (req, res) => {
+      console.log("m",p)
+console.log("k",page)
         axios
-          .get(`http://localhost:5000/specialties`)
+          .get(`http://localhost:5000/specialties?limit=${(3)}&page=${p}`)
           .then((result) => {
             console.log(result.data.specialt
               )
@@ -81,6 +83,27 @@ return(
             })}
 
 </div>
+<button onClick={()=>{
+
+
+// setpage(page+3) 
+  setp(p+1)
+console.log("m",p)
+console.log("k",page)
+
+  GettAllSpic()
+  }
+  } className="paging">
+  Previous</button>
+  <button onClick={()=>{
+
+
+// setpage(page+3) 
+  setp(p-1)
+console.log("m",p)
+console.log("k",page)
+
+  GettAllSpic()}} className="paging">Next</button>
 </div>
 )
 }

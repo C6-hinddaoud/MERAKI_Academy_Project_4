@@ -65,10 +65,10 @@ Step 8 − App.
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.6.1",from node.js using git bash
 ### Installing:
+ 1. Clone the repo to your local machine using git bash.
 
-<!-- 1. Clone the repo to your local machine using git bash.
 
-```
+
 git clone https://github.com/C6-hinddaoud/MERAKI_Academy_Project_4
 
 2. Install packeges repeat this step in backend and frontend folder
@@ -98,13 +98,13 @@ npm run dev
 
 
 
-
+-->
 
 6. Run application using git bash inside frontend folder
 
 
 
-7.install
+7.install 
  axios ,calender,install ,
 "react",
     "react-calendar",

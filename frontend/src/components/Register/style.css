@@ -20,7 +20,7 @@ height: 100%;
  .imgReg{
   /* margin-top: 5%; */
     width: 100%;
-    height: 730px;
+    height: 630px;
 
  } 
   * {
@@ -66,7 +66,18 @@ height: 100%;
     width: 100%;
     opacity: 0.9;
   }
-
+.goBakebtnReg{
+margin-bottom:20px;
+position: fixed;
+left: 1%;
+bottom: 5%;
+background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
   .registerbtnnew {
     background-color: #04AA6D;
     color: white;

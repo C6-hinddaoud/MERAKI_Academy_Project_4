@@ -1,6 +1,6 @@
 .img-fluid{
-width: 50%;
-height: 50%;
+width: 80%;
+height: 70%;
 margin: 5%;
 
 }
@@ -12,20 +12,42 @@ margin: 5%;
   
 
 }
+
+.ulDsign{
+
+    margin-top: 10%;
+}
 .lim{
 text-align: left;
-margin: 3%;
-padding: 5%;
+ margin: 3%;
+/* padding: 5%;  */
 
 }
-.about{
-
+.abouting{
+/* overflow: hidden; */
     margin: 5%;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 .cta {
     background: #3fbbc0;
     color: white;
     background-size: cover;
     /* padding: 60px 0; */
+}
+
+/* .aboutmain{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+
+} */
+.aos-init {
+
+
+}
+.sboutMainPage{
+display: grid;
+flex-wrap: wrap;
+grid-template-columns: 1fr 1fr ;
+overflow: hidden;
 }

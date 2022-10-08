@@ -1,9 +1,10 @@
 import React from "react";
 import "./style.css";
-
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 const Register = () => {
+  const navgate=new useNavigate()
   const [specialt, setSpecialt] = useState([]);
   const [specialty, setDdl] = useState("");
   const [ddlName, setDdlName] = useState("");
@@ -62,6 +63,7 @@ const Register = () => {
     <div className="mainIntroDev">
       <div className="imgregester">
         <img  className="imgReg" src="./assets/images/doc4.jpg" alt="pic"></img>
+        <button className="goBakebtnReg" onClick={()=>{navgate(-1)}}>Go Back</button>
       </div>
       <div className="container">
         <h1>Register</h1>

@@ -132,8 +132,31 @@ console.log("lkj")
 
 
 const getDoctorInformationALLdocr=(req,res)=>{
+doctorModel.find({})
+.then((result)=> {
+  console.log("bf", result)
+  if(!result){
+    res.status(500).json({
+      success: false,
+      message: `There Are no Patient in Dr:${name}`,
+      patient: result,
+    });
+  }else{
+  res.status(201).json({
+    success: true,
+    message: `This is info about  :${firstName}`,
+    patient: result,
+  });
+}
+})
+.catch((err)=>{
 
-
+  res.status(500).json({
+    success: false,
+    message: `Server Error`,
+    err: err.message,
+  });
+})
 }
 
 module.exports = { createNewDoctor ,getallDoctobySpecialty,getAllPatientInTheSameDoctor,gitpatientpyName,getDoctorInformationALLdocr};

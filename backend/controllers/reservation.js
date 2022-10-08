@@ -19,10 +19,10 @@ const createNewReservation = (req, res) => {
   newReservation
     .save()
     .then((result) => {
-console.log("lj;lkjk")
+
         patientModel.updateOne({_id:userId},{doctor:doctorRes},{ new: true })
         .then((n)=>{
-          console.log("lllllllllll")
+          
             //const resDate = new Date(result.date);
             res.status(201).json({
                 success: true,
