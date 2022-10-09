@@ -187,7 +187,7 @@ return(<div className="patintDev">
 
     <div  className="navbardoc">
     <div className="NAV"><img className="imglogo" src="./assets/images/logo.png"></img></div>
-<div  onClick={()=>{navgat('/Register')}} className="NAV">Show Doctor Information</div>
+<div  onClick={()=>{navgat('/ShowDoctot')}} className="NAV">Show Doctor Information</div>
 <div className="NAV" onClick={()=>{navgat('/Specialty')}}    > Add New specialty </div>
 
       <div onClick={()=>{navgat('/Register')}}  className="NAV">  Add New Doctor </div>

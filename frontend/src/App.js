@@ -14,6 +14,7 @@ import About from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import GetApi from "./components/APIFolder";
+import ShowDoctot from "./components/ShowDoctorInfo";
 
  export const authorContext=createContext()
 
@@ -48,7 +49,9 @@ function App() {
       <Route path="/Contact"   element={<Contact/>}></Route>
       <Route path="/Home"   element={<Home/>}></Route>
       <Route path="/GetApi"   element={<GetApi/>}></Route>
-      GetApi
+      <Route path="/ShowDoctot"   element={<ShowDoctot/>}></Route>
+      ShowDoctot
+    
 </Routes>
 <div className="foter"> <div class="copyright">
         <strong><span>Medicio</span></strong>

@@ -1,0 +1,55 @@
+.shwDoc{
+display: grid;
+flex-wrap: wrap;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 2%;
+}
+.card {
+    margin-top: 33%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .containershow {
+    padding: 2px 16px;
+  }
+  .registerbtnshowdoctor{
+    background-color: #f08e0e;
+ 
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 32%;
+   
+
+}
+.registerbtnbelDoctor{
+    background-color: #e91919;
+ 
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 32%;
+   
+
+}
+.registerbtnback{
+margin: 5%;
+background-color:green;
+ 
+color: white;
+padding: 16px 20px;
+
+border: none;
+cursor: pointer;
+width: 32%;
+}

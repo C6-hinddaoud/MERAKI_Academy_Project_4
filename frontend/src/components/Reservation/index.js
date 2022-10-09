@@ -42,7 +42,7 @@ axios.get(`http://localhost:5000/doctors/spicilaty/${specId}`)
     setallDoctorRes(result.data.specialt)
     
     console.log("setDOC",doc)
-  setMesage(result.data.message)
+  // setMesage(result.data.message)
   })
   .catch((err) => {
     setMesage(err.response.data.message)
